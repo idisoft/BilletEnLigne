@@ -1,0 +1,22 @@
+{% form_theme form 'MainBundle:MesVues:bootstrap_3_layout.html.twig' %}
+
+<div class="row">
+    <br><br><br>
+    <div class="col-lg-10 col-md-10  col-sm-10 col-xs-10  col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+        <p class="bg-primary">
+            {%if entite is defined %}
+                {{entite|upper}}:
+            {%endif%}
+            {%if operation is defined %}
+                {{operation}}
+            {%endif%}
+        </p>
+        <div class="mywell-sm">
+            <form method="post" class="form-inline" role="form">
+                {{form_widget(form)}} <br/>
+                {{form_errors(form)}}
+                <button type="submit" class="btn btn-primary btn-sm"> GO </button>
+            </form>
+        </div>
+    </div>
+</div>

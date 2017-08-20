@@ -1,0 +1,60 @@
+<!-- Table des formations-->
+ <table class="table table-condensed table-bordered">
+     <thead>
+        <th>Nom</th> 
+        <th>Adresse</th>
+        <th>Téléphone</th>
+
+        <th style="width: 20px"></th>     
+    </thead>  
+    <tbody>
+        {%for compagnie in listeCompagnies%}
+            <tr>                        
+                <td>{{compagnie.nomComp}} </td>
+                <td>{{compagnie.adresseComp}}</td>
+                <td>{{compagnie.telComp}}</td>
+
+               <td>
+                   <div class="btn-group">
+                       <button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown">
+                           Actions <span class="caret"></span>
+                       </button>
+                       <ul class="dropdown-menu" role="menu">
+                           <li><a href="{{ path('compagnie_details',{'idCompagnie':compagnie.id})}}" >Voir Details</a></li>
+
+                           <li>
+                               <a href="{{ path('compagnie_modifier',{'idCompagnie': compagnie.id}) }}"> Modifier </a>
+                           </li>
+                           <li>
+                               <a href="#" data-toggle="modal" data-target="#comp{{compagnie.id}}" style="color:#ff0000"> Supprimer </a>
+                           </li>
+
+                   </ul>
+               </div>
+
+               </td>
+
+            <!-- Modal-->
+            <div class="modal fade" id="comp{{compagnie.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
+                  </div>
+                  <div class="modal-body">
+                    Voulez vous reellement supprimer cette compagnie??
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Non</button>
+                    <a href="{{ path('compagnie_supprimer',{'idCompagnie': compagnie.id}) }}"><button type="button" class="btn btn-primary">Oui</button></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            </tr>
+        {%endfor%}
+    </tbody>
+ </table>
+           

@@ -1,0 +1,10 @@
+services:
+#    main.example:
+#        class: MainBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+    main_myCustomServices:
+        class: MainBundle\CustomServices\MyCustomServices
+        calls:
+            - ["setContainer", ["@service_container"]]
+

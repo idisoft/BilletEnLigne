@@ -1,0 +1,63 @@
+{%extends "MainBundle::adminLayout.html.twig" %}
+
+{% block title %} {{parent()}} {%endblock%}
+{% block content %}
+        
+    <br>
+    <div class="row">{{parent()}}</div>
+    
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#voyage" data-toggle="tab">Voyages</a></li>
+        <li><a href="#trajet" data-toggle="tab">Trajets</a></li>
+        <li><a href="#autobus" data-toggle="tab">AutoBus</a></li>
+   
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+
+        <!--##################### Voyage  -->
+
+        <div class="tab-pane fade in active" id="voyage">
+
+            <h3>
+                Liste des voyages effectués
+                <a href="{{ path('voyage_nouveau') }}" class="btn btn-primary btn-sm"> <span class="glyphicon glyphicon-plus-sign"></span> Créer </a>
+
+            </h3>
+
+            {{ render(controller("MainBundle:Voyage:listeByCompagnie", {'idCompagnie': compagnie.id})) }}
+        </div>
+
+
+        <!--##################### Trajet  -->
+
+        <div class="tab-pane" id="trajet">
+
+            <h3>
+                Liste des trajets de la compagnie
+                <a href="{{ path('trajet_nouveau') }}" class="btn btn-primary btn-sm"> <span class="glyphicon glyphicon-plus-sign"></span> Nouveau Trajet</a>
+
+            </h3>
+
+            {{ render(controller("MainBundle:Trajet:listeByCompagnie", {'idCompagnie': compagnie.id})) }}
+        </div>
+
+
+        <!--##################### AutoBus  -->
+
+        <div class="tab-pane" id="autobus">
+
+            <h3>
+                Liste des autobus de la compagnie
+                <a href="{{ path('autoBus_nouveau') }}" class="btn btn-primary btn-sm"> <span class="glyphicon glyphicon-plus-sign"></span> Nouvel AutoBus</a>
+
+            </h3>
+
+            {{ render(controller("MainBundle:AutoBus:listeByCompagnie", {'idCompagnie': compagnie.id})) }}
+        </div>
+
+    </div>
+        
+    
+{% endblock %}   

@@ -1,0 +1,70 @@
+<!-- Table des formations-->
+ <table class="table table-condensed table-bordered">
+     <thead>
+        <th>Région Depart</th>
+        <th>Région Arrivée</th>
+        <th>Distance</th>
+        <th>Prix</th>
+        <th>Parent</th>
+
+        <th style="width: 20px"></th>     
+    </thead>  
+    <tbody>
+        {%for trajet in listeTrajets%}
+            <tr>
+                <td>{{trajet.source.nomGare}} </td>
+                <td>{{trajet.destination.nomGare}} </td>
+                <td>{{trajet.distance}} </td>
+                <td>{{trajet.prixTrajet}}</td>
+                <td>
+                    {% if trajet.trajetParent is not null %}
+                        {{trajet.trajetParent.trajet}}
+                    {% else %}
+                        -
+                    {% endif %}
+                </td>
+
+               <td>
+                   <div class="btn-group">
+                       <button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown">
+                           Actions <span class="caret"></span>
+                       </button>
+                       <ul class="dropdown-menu" role="menu">
+                           {#<li><a href="{{ path('compagnieDetails',{'idCompagnie':compagnie.id})}}" >Voir Details</a></li>#}
+
+                           <li>
+                               <a href="{{ path('trajet_modifier',{'idTrajet': trajet.id}) }}"> Modifier </a>
+                           </li>
+                           <li>
+                               <a href="#" data-toggle="modal" data-target="#trajet{{trajet.id}}" style="color:#ff0000"> Supprimer </a>
+                           </li>
+
+                   </ul>
+               </div>
+
+               </td>
+
+              <!-- Modal-->
+              <div class="modal fade" id="trajet{{trajet.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
+                    </div>
+                    <div class="modal-body">
+                      Voulez vous reellement supprimer ce trajet??
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Non</button>
+                      <a href="{{ path('trajet_supprimer',{'idTrajet': trajet.id}) }}"><button type="button" class="btn btn-primary">Oui</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </tr>
+        {%endfor%}
+    </tbody>
+ </table>
+           

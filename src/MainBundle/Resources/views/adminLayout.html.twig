@@ -1,0 +1,22 @@
+{%extends "::adminLayout.html.twig" %}
+
+{%block content %}
+    <div class="row">
+        
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            {% for message in app.session.flashbag.get('alert_danger') %}
+                <div class="alert alert-danger alert-dismissable">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                  <strong>Attention!</strong> {{ message }}
+                </div>
+            {% endfor %}
+            
+            {% for message in app.session.flashbag.get('alert_info') %}
+                <div class="alert alert-info alert-dismissable">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                  <strong>Information!</strong> {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{%endblock%}

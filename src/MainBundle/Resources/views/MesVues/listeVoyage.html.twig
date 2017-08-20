@@ -1,0 +1,68 @@
+<!-- Table des formations-->
+ <table class="table table-condensed table-bordered">
+     <thead>
+        <th>AutoBus N°</th>
+        <th>Date Voyage</th>
+        <th>Heure Départ</th>
+        <th>Nbre Trajet</th>
+
+        <th style="width: 20px"></th>     
+    </thead>  
+    <tbody>
+        {%for voyage in listeVoyages%}
+            <tr>
+                <td>{{voyage.autoBus.code}} </td>
+                <td>{{voyage.dateVoyage | date('d-M-y')}} </td>
+                <td>{{voyage.heureDepart | date('H-m')}}</td>
+                <td>
+                    {%for voyageTrajet in voyage.voyageTrajets%}
+                        {{voyageTrajet.trajet.trajet}} <br/>
+                    {% endfor %}
+                </td>
+
+                <td>
+                   <div class="btn-group">
+                       <button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown">
+                           Actions <span class="caret"></span>
+                       </button>
+                       <ul class="dropdown-menu" role="menu">
+                           <li>
+                               <a href="{{ path('voyage_details',{'idVoyage':voyage.id})}}" >Voir Details</a>
+                           </li>
+
+                           <li>
+                               <a href="{{ path('voyage_modifier',{'idVoyage': voyage.id}) }}"> Modifier </a>
+                           </li>
+                           <li>
+                               <a href="#" data-toggle="modal" data-target="#voy{{voyage.id}}" style="color:#ff0000"> Supprimer </a>
+                           </li>
+
+                       </ul>
+                   </div>
+
+                </td>
+
+                    <!-- Modal-->
+                  <div class="modal fade" id="voy{{voyage.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
+                        </div>
+                        <div class="modal-body">
+                          Voulez vous reellement supprimer ce voyage??
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Non</button>
+                          <a href="{{ path('voyage_supprimer',{'idVoyage': voyage.id}) }}"><button type="button" class="btn btn-primary">Oui</button></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+            </tr>
+        {%endfor%}
+    </tbody>
+ </table>
+           

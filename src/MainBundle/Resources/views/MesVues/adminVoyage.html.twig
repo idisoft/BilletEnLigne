@@ -1,0 +1,48 @@
+{%extends "MainBundle::adminLayout.html.twig" %}
+{#% form_theme form 'MainBundle:MesVues:bootstrap_3_layout.html.twig' %#}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/sb-admin-2.min.css') }}" type="text/css"/>
+{% endblock %}
+
+{%block title %} ESPACE ADMIN VOYAGES {%endblock%}
+
+{%block content %}
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#voyagesPlan" data-toggle="tab">Voyages planifiés</a></li>
+        <li><a href="#voyagesFaits" data-toggle="tab">Voyages éffectués</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+
+        <!--##################### Voyages planifiés  -->
+
+        <div class="tab-pane fade in active" id="voyagesPlan">
+
+            <h3>
+                Liste des voyages planifiés
+                <a href="{{ path('voyage_nouveau') }}" class="btn btn-primary btn-sm"> <span class="glyphicon glyphicon-plus-sign"></span> Nouveau </a>
+            </h3>
+
+            {{ render(controller("MainBundle:Voyage:listeVoyagesByStatus", {'status': 'open'})) }}
+
+        </div>
+
+
+        <!--##################### Voyages effectués  -->
+
+        <div class="tab-pane" id="voyagesFaits">
+            <h3>Liste des voyages planifiés</h3>
+            {{ render(controller("MainBundle:Voyage:listeVoyagesByStatus", {'status': 'close'})) }}
+
+        </div>
+
+
+    </div>
+
+{%endblock%}
+
+

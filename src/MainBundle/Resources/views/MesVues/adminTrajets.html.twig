@@ -1,0 +1,37 @@
+{%extends "MainBundle::adminLayout.html.twig" %}
+{#% form_theme form 'MainBundle:MesVues:bootstrap_3_layout.html.twig' %#}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/sb-admin-2.min.css') }}" type="text/css"/>
+{% endblock %}
+
+{%block title %} ESPACE ADMIN TRAJETS {%endblock%}
+
+{%block content %}
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#trajets" data-toggle="tab">Trajets disponibles</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+
+        <!--##################### Trajets disponibles  -->
+
+        <div class="tab-pane fade in active" id="trajets">
+
+            <h3>
+                Liste des trajets
+                <a href="{{ path('trajet_nouveau') }}" class="btn btn-primary btn-sm"> <span class="glyphicon glyphicon-plus-sign"></span> Nouveau </a>
+            </h3>
+
+            {{ render(controller("MainBundle:Trajet:listeByCompagnie", {'idCompagnie': idCompagnie})) }}
+
+        </div>
+
+    </div>
+
+{%endblock%}
+
+

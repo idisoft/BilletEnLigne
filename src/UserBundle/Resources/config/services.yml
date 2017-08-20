@@ -1,0 +1,17 @@
+services:
+#    user.example:
+#        class: UserBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+#   arguments: ["%fos_user.model.user.class%"]
+
+    my_user.registration.form.type:
+        class: UserBundle\Form\RegistrationFormType
+        tags:
+            - { name: form.type, alias: my_user_registration }
+
+
+    Security_user.profile.form.type:
+        class: UserBundle\Form\ProfileFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: security_user_profile }

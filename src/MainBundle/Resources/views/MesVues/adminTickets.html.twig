@@ -1,0 +1,94 @@
+{%extends "MainBundle::adminLayout.html.twig" %}
+{% form_theme form 'MainBundle:MesVues:bootstrap_3_layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/sb-admin-2.min.css') }}" type="text/css"/>
+{% endblock %}
+
+{%block title %} ESPACE ADMIN TICKETS {%endblock%}
+
+{%block content %}
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#rechercheTickets" data-toggle="tab">Trajets disponibles</a></li>
+        <li><a href="#ticketsVendus" data-toggle="tab">Tickets vendus par vous</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+
+        <!--##################### Recherche tickets  -->
+
+        <div class="tab-pane fade in active" id="rechercheTickets">
+
+            <div class="row">
+                <br><br>
+                <div class="col-lg-12 col-md-12  col-sm-12 col-xs-12">
+                    <div class="mywell-sm">
+                        <form method="post" class="form-inline" role="form">
+                            {{form_widget(form)}}
+                            {{form_errors(form)}}
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ######################### RESULTAT DE LA RECHERCHE ########################## -->
+
+            <table class="table table-condensed table-bordered table-responsive">
+                <thead>
+                <th>Compagnie</th>
+                <th>Trajet</th>
+                <th>Date</th>
+                <th>Heure</th>
+
+                <th style="width: 20px"></th>
+                </thead>
+
+                <tbody>
+
+                {% if listeVoyageTrajets is defined %}
+                    {%for voyageTrajet in listeVoyageTrajets%}
+                        <tr>
+                            <td>{{voyageTrajet.trajet.compagnie.nomComp}} </td>
+                            <td>{{voyageTrajet.trajet.trajet}} </td>
+                            <td>{{voyageTrajet.voyage.dateVoyage | date('d-M-y')}} </td>
+                            <td>{{voyageTrajet.voyage.heureDepart | date('H:i')}}</td>
+                            <td><a href="{{ path('ticket_nouveau',{'idVoyageTrajet': voyageTrajet.id}) }}">Payer</a></td>
+                        </tr>
+                    {%endfor%}
+                {% endif %}
+
+                </tbody>
+            </table>
+
+        </div>
+
+
+        <!--##################### Tickets Vendus -->
+
+        <div class="tab-pane" id="ticketsVendus">
+            <br/>
+            {{ render(controller("MainBundle:Ticket:findByCurrentUser")) }}
+        </div>
+
+    </div>
+
+{%endblock%}
+
+{% block javascripts %}
+    {{parent()}}
+
+    <script type="text/javascript">
+        $(function () {
+            $('#main_bundle_recherche_voyage_dateDepart').datepicker({
+                format: 'yyyy/mm/dd'
+            });
+        });
+    </script>
+
+{%endblock%}
+
+
+

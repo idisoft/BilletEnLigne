@@ -1,0 +1,36 @@
+{%extends "MainBundle::adminLayout.html.twig" %}
+
+{% block title %} {{parent()}} {%endblock%}
+{% block content %}
+        
+    <br>
+    <div class="row">{{parent()}}</div>
+    
+    <div class="mywell-sm">
+        Date Voyage: {{ voyage.dateVoyage|date('d-M-y') }}  -----------
+        Heure Départ: {{ voyage.heureDepart|date('H:m')}}   -----------
+        AutoBus: {{ voyage.autoBus.code }}  <br/>
+    </div>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#trajets" data-toggle="tab">Trajets</a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+
+        <!--##################### Trajets  -->
+
+        <div class="tab-pane fade in active" id="trajets">
+
+            <h3>
+                Liste des trajets
+                <a href="{{ path('voyageTrajet_nouveau') }}" class="btn btn-primary btn-sm"> <span class="glyphicon glyphicon-plus-sign"></span> Créer </a>
+
+            </h3>
+
+            {{ render(controller("MainBundle:VoyageTrajet:listeByVoyage", {'idVoyage': voyage.id})) }}
+        </div>
+
+    </div>
+        
+    
+{% endblock %}   

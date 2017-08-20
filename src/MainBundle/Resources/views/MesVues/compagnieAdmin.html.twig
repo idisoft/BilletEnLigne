@@ -1,0 +1,25 @@
+{%extends "MainBundle::adminLayout.html.twig" %}
+
+{% block title %} {{parent()}} {%endblock title%}
+{% block content %}
+
+    <div class="row">{{parent()}}</div>
+    
+    <ul class="nav nav-tabs notPrint">
+        <li class="active"><a href="#liste" data-toggle="tab">Liste des compagnies</a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        
+        <div class="tab-pane fade in active" id="liste"> 
+            <br>
+            <a href="{{ path('compagnie_nouveau') }}" class="btn btn-primary btn-sm"> <span class="glyphicon glyphicon-plus-sign"></span> Nouvelle Compagnie</a>
+            <br/><br/>
+            {{ render(controller("MainBundle:Compagnie:liste")) }}
+        </div>
+        
+        
+    </div>
+        
+    
+{% endblock %}

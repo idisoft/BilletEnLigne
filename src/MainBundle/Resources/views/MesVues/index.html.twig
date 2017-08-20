@@ -1,0 +1,131 @@
+{%extends "MainBundle::layout.html.twig" %}
+{% form_theme form 'MainBundle:MesVues:bootstrap_3_layout.html.twig' %}
+
+{%block title %} BIENVENUE DANS VOTRE AGENCE DE VOYAGE {%endblock%}
+
+{%block content %}
+    {{parent()}}
+
+    {#{ render(controller("MainBundle:RechercheIndex:recherche")) }#}
+
+    <section id="search_area">
+        <div class="row">
+            <div class="form_box">
+                <div class="col-lg-12 col-md-12  col-sm-12 col-xs-12">
+                {#<p class="top-line"></p>#}
+                {#<div class="mywell-sm">#}
+
+                    <form method="post">
+
+                        <div class="col-lg-2 col-md-3 col-sm-6">
+                            <div class="form-group spacing">
+                                {{ form_label(form.compagnie) }}
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></span>
+                                    {{ form_errors(form.compagnie) }}
+                                    {{ form_widget(form.compagnie) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-2 col-sm-6">
+                            <div class="form-group spacing">
+                                {{ form_label(form.source) }}
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></span>
+                                    {{ form_errors(form.source) }}
+                                    {{ form_widget(form.source) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-2 col-sm-6">
+                            <div class="form-group spacing">
+                                {{ form_label(form.destination) }}
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></span>
+                                    {{ form_errors(form.destination) }}
+                                    {{ form_widget(form.destination) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-sm-6">
+                            <div class="form-group registration-date">
+                                {{ form_label(form.dateDepart) }}
+                                <div class="input-group registration-date-time">
+                                    <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+                                    {{ form_errors(form.dateDepart) }}
+                                    {{ form_widget(form.dateDepart) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-1 col-md-2 col-sm-12">
+                            <div class="form-group spacing">
+                                {{ form_row(form.submit) }}
+                            </div>
+                        </div>
+
+                        {{form_rest(form)}}
+                        {#{{form_errors(form)}}#}
+                    </form>
+                    {#</div>#}
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ######################### RESULTAT DE LA RECHERCHE ########################## -->
+
+    <br/>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12  col-sm-12 col-xs-12">
+                <div class="table-responsive">
+                    <table class="table table-condensed table-bordered table-responsive">
+                        <thead>
+                            <th>Compagnie</th>
+                            <th>Trajet</th>
+                            <th style="text-align:center;">Date</th>
+                            <th style="text-align:center;">Heure</th>
+                            <th  style="width: 20px"></th>
+                        </thead>
+
+                        <tbody>
+
+                            {% if listeVoyageTrajets is defined %}
+                                {%for voyageTrajet in listeVoyageTrajets%}
+                                    <tr>
+                                        <td>{{voyageTrajet.trajet.compagnie.nomComp}} </td>
+                                        <td>{{voyageTrajet.trajet.trajet}} </td>
+                                        <td style="text-align:center;">{{voyageTrajet.voyage.dateVoyage | date('d-M-y')}} </td>
+                                        <td style="text-align:center;">{{voyageTrajet.voyage.heureDepart | date('H:i')}}</td>
+                                        <td><a href="{{ path('ticket_nouveau',{'idVoyageTrajet': voyageTrajet.id}) }}" class="btn btn-info payer">Payer</a></td>
+                                    </tr>
+                                {%endfor%}
+                            {% endif %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{parent()}}
+
+    <script type="text/javascript">
+        $(function () {
+            $('#main_bundle_recherche_voyage_dateDepart').datepicker({
+                format: 'yyyy/mm/dd'
+            });
+        });
+    </script>
+
+{%endblock%}
+
+

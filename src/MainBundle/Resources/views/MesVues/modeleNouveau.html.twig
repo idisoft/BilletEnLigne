@@ -1,0 +1,35 @@
+{%extends "MainBundle::adminLayout.html.twig" %}
+{% form_theme form 'MainBundle:MesVues:bootstrap_3_layout.html.twig' %}
+
+{%block title %} Formulaire {%endblock%}
+            
+{%block content %}
+    {{parent()}}
+    <div class="row">
+        <br><br>
+        <div class="col-lg-8 col-md-8  col-sm-8 col-xs-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
+            <p class="bg-primary">
+                {%if entite is defined %}
+                    {{entite|upper}}:
+                {%endif%}
+                {%if operation is defined %}
+                    {{operation}}
+                {%endif%}
+            </p>
+            <div class="mywell-sm row">
+                <form method="post" class="form-horizontal col-lg-12 col-md-12  col-sm-12" role="form">
+                    {{form_widget(form)}} <br/>
+                    {{form_errors(form)}}
+                    <p>
+                        <input type="submit" value="Enregistrer" class="btn btn-primary btn-sm"/>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+               
+ {% endblock %}
+
+{% block javascripts %}
+    {{parent()}}
+{%endblock%} 
