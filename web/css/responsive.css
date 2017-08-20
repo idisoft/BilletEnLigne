@@ -1,0 +1,322 @@
+ 
+
+@media only screen and (min-width: 1200px) and (max-width: 1920px) {
+ 
+	.container{
+		width:1200px;
+	}
+    
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) { 
+	
+    
+.img_box img {
+	width: 100%;
+	float: left;
+	height: 218px;
+}		 
+.img_details {
+	width: 100%;
+	float: right;
+	margin-top: 0;
+	background: #fff;
+	padding: 6px;
+	border: 1px solid #d7d7d7;
+}		
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+.img_box img {
+	width: 100%;
+	float: left;
+	height: 218px;
+}		 
+.img_details {
+	width: 100%;
+	float: right;
+	margin-top: 0;
+	background: #fff;
+	padding: 6px;
+	border: 1px solid #d7d7d7;
+}	 
+.container.more {
+    width: 70%;
+    float: right;
+}
+.left_img {
+	width: 30%;
+	float: left;
+	margin-top: 53px;
+}
+.right_img {
+	width: 30%;
+	float: left;
+	margin-top: 53px;
+}
+.logo_here {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}	
+
+.menu_list.pull-right {
+    float: unset !important; 
+}
+ul.menu_here li {
+	float: left;
+	border-left: 1px solid #fff;
+	line-height: 40px;
+	margin-left: 36px;
+}
+
+
+
+
+
+
+
+
+	
+}
+@media screen and (min-width: 600px) and (max-width: 800px) {
+.img_box img {
+	width: 100%;
+	float: left;
+	height: 218px;
+}		 
+.img_details {
+	width: 100%;
+	float: right;
+	margin-top: 0;
+	background: #fff;
+	padding: 6px;
+	border: 1px solid #d7d7d7;
+}	 
+.container.more {
+    width: 70%;
+    float: right;
+}
+.left_img {
+	width: 30%;
+	float: left;
+	margin-top: 53px;
+}
+.right_img {
+	width: 30%;
+	float: left;
+	margin-top: 53px;
+}
+.logo_here {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}	
+
+.menu_list.pull-right {
+    float: unset !important; 
+}
+ul.menu_here li {
+	float: left;
+	border-left: 1px solid #fff;
+	line-height: 40px;
+	margin-left: 36px;
+}
+
+.slicknav_menu {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 7px;
+    z-index: 9999;
+    background: none;
+}
+ 
+.slicknav_nav {
+	color: #fff;
+	margin: 0;
+	padding: 0;
+	font-size: 0.875em;
+	list-style: none;
+	overflow: hidden;
+	width: 200px;
+	background:#000;
+}
+ 
+.slicknav_menu {
+		display:none;
+} 
+.menu_here {
+	display:block;
+}
+	
+
+
+}
+@media only screen and (max-width: 767px) {
+.img_box img {
+	width: 100%;
+	float: left;
+	height: 218px;
+}		 
+.img_details {
+	width: 100%;
+	float: right;
+	margin-top: 0;
+	background: #fff;
+	padding: 6px;
+	border: 1px solid #d7d7d7;
+}	 
+.container.more {
+    width: 70%;
+    float: right;
+}
+.left_img {
+	width: 30%;
+	float: left;
+	margin-top: 53px;
+}
+.right_img {
+	width: 30%;
+	float: left;
+	margin-top: 53px;
+}
+
+.menu_list.pull-right {
+    float: unset !important; 
+}
+ul.menu_here li {
+	float: left;
+	border-left: 1px solid #fff;
+	line-height: 40px;
+	margin-left: 36px;
+}
+
+.slicknav_menu {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 7px;
+    z-index: 9999;
+    background: none;
+}
+ 
+.slicknav_nav {
+	color: #fff;
+	margin: 0;
+	padding: 0;
+	font-size: 0.875em;
+	list-style: none;
+	overflow: hidden;
+	width: 200px;
+	background:#000;
+}
+  
+.slicknav_menu {
+		display:block;
+} 
+.menu_here {
+	display:none;
+}
+	  
+ 
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+ .img_box img {
+	width: 100%;
+	float: left;
+	height: 218px;
+}		 
+.img_details {
+	width: 100%;
+	float: right;
+	margin-top: 0;
+	background: #fff;
+	padding: 6px;
+	border: 1px solid #d7d7d7;
+}	
+.slicknav_menu {
+		display:block;
+} 
+.menu_here {
+	display:none;
+}
+
+	
+}
+
+@media only screen and (min-width: 320px) and (max-width:480px) {
+ .img_box img {
+	width: 100%;
+	float: left;
+	height: 218px;
+}		 
+.img_details {
+	width: 100%;
+	float: right;
+	margin-top: 0;
+	background: #fff;
+	padding: 6px;
+	border: 1px solid #d7d7d7;
+}	
+
+
+ul.menu_here li {
+	float: unset;
+	border-left: 1px solid #fff;
+	line-height: 40px;
+	margin-left: 0;
+	width: 100%;
+}
+.container.more {
+	width: 100%;
+	float: right;
+}
+.left_img {
+	width: 100%;
+	float: left;
+	margin-top: 53px;
+}
+.right_img {
+	width: 100%;
+	float: left;
+	margin-top: 53px;
+}
+
+.slicknav_menu {
+		display:block;
+} 
+.menu_here {
+	display:none;
+}
+.slicknav_menu {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 37px;
+    z-index: 9999;
+    background: none;
+}
+ 
+.slicknav_nav {
+	color: #fff;
+	margin: 0;
+	padding: 0;
+	font-size: 0.875em;
+	list-style: none;
+	overflow: hidden;
+	width: 200px;
+	background:#000;
+}
+ .logo_here {
+	margin: 0 auto;
+	width: 100%;
+	text-align: left;
+}	
+
+}
+
+ 
+ 

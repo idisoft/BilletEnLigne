@@ -1,0 +1,310 @@
+body
+{
+    background-color: transparent;
+    /*background-image: url('../images/template/bg.jpg');*/
+    background-repeat: repeat;
+}
+
+.navbar {
+  margin-bottom: -2px;
+}
+
+.form-inline .form-control {
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.mini-cadre {
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid #d2d2d2;
+  -webkit-box-shadow: inset 0 1px 1px rgba(1, 0, 1, 0.05);
+}
+
+.mycontainer
+{
+    border: 1.2px solid #d2d2d2;
+    background-color: #a8d5ff;
+    padding: 10px;
+    margin: 1px;
+}
+
+.mywell {
+  min-height: 20px;
+  padding: 30px;
+  margin: 60px auto;
+  background-color: #ffffff;
+  border: 1px solid #d2d2d2;
+  border-radius: 0px 0px 0px 50px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.mywell-sm {
+    min-height: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #cbeaff;
+    border: 2px solid #d2d2d2;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.top-line{
+    border: solid;
+    border-color: #eca21c;
+    margin-bottom: -2px;
+}
+.wellguide {
+  min-height: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  background-color: #ffffff;
+  border: 1px dashed #d2d2d2;
+  font-style: italic;
+  font-size: 12px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.wellguide-sm {
+  min-height: 20px;
+  padding: 5px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  background-color: #ffffff;
+  border: 1px dashed #d2d2d2;
+  font-style: italic;
+  font-size: 14px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.wellguide-title{
+    font-style: normal;
+    font-weight: bold;
+    color: red;
+}
+.voletSuggestion
+{
+    position: absolute;
+    width: 100%;
+    top: 1em;
+    right: 2%;
+    margin-left:2%;
+    margin-right: 0px;
+    z-index: 2;
+}
+
+.panel {
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border-radius: 0px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.panel-heading {
+  padding: 5px 5px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
+
+/* ##################### Style du menu ############### */
+
+.menu-bar {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    margin-bottom: 5px;
+}
+
+.bars {
+    margin-bottom: 30px;
+}
+
+.menu {
+    display: none;
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    background-color: #fff;
+}
+.menu ul {
+    margin-bottom: 5px;
+}
+.menu a {
+    color: #333;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+.menu a:hover {
+    text-decoration: none;
+    opacity: 1;
+}
+
+.icon-medium-size{
+
+    font-size: 20px;
+    text-align: center;
+
+}
+
+/* ####### Style du bouton Payer #######*/
+.btn.btn-info.payer {
+    background: #f8941a;
+    text-transform: none;
+    text-align: center;
+    margin: 2px;
+    color: #fff;
+    border: 0px solid;
+    width: 80px;
+    font-size: 18px;
+    font-weight: normal;
+    height: 36px;
+}
+
+
+/*############## Step Line ###############*/
+
+.steps-section {
+    margin-bottom: 20px;
+    background-color: #eef4fd;
+}
+.section-header, .steps-header, .steps-name {
+    color: #3498DB;
+    font-weight: 400;
+    font-size: 1.4em;
+}
+
+.steps-header {
+    margin-bottom: 1px;
+    text-align: center;
+}
+
+.steps-timeline {
+    outline: 5px dashed rgba(255, 0, 0, 0);
+}
+@media screen and (max-width: 500px) {
+    .steps-timeline {
+        border-left: 2px solid #3498DB;
+        margin-left: 25px;
+    }
+}
+@media screen and (min-width: 500px) {
+    .steps-timeline {
+        border-top: 2px solid #1a4a92;
+        padding-top: 20px;
+        margin-top: 40px;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+}
+.steps-timeline:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.steps-one,
+.steps-two,
+.steps-three,
+.steps-four{
+    outline: 1px dashed rgba(0, 128, 0, 0);
+}
+@media screen and (max-width: 500px) {
+    .steps-one,
+    .steps-two,
+    .steps-three,
+    .steps-four{
+        margin-left: -2px;
+    }
+}
+@media screen and (min-width: 500px) {
+    .steps-one,
+    .steps-two,
+    .steps-three,
+    .steps-four{
+        float: left;
+        width: 100%;
+        margin-top: -37px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .steps-one,
+    .steps-two {
+        padding-bottom: 30px;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .steps-one{
+        margin-left: -50%;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .steps-two{
+        margin-left: -10%;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .steps-three{
+        margin-left: 25%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .steps-three {
+        margin-bottom: -100%;
+    }
+}
+@media screen and (min-width: 500px) {
+    .steps-four {
+        margin-left: 50.30%;
+        margin-right: -60%;
+    }
+}
+
+.steps-img {
+    display: block;
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #f89425;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: large;
+    font-weight: bold;
+}
+@media screen and (max-width: 500px) {
+    .steps-img {
+        float: left;
+        margin-right: 20px;
+    }
+}
+
+.steps-name,
+.steps-description {
+    margin: 0;
+}
+
+@media screen and (min-width: 500px) {
+    .steps-name {
+        text-align: center;
+    }
+}
+
+.steps-description {
+    overflow: hidden;
+}
+@media screen and (min-width: 500px) {
+    .steps-description {
+        text-align: center;
+    }
+}
