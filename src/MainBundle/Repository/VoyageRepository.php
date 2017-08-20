@@ -45,20 +45,20 @@ class VoyageRepository extends \Doctrine\ORM\EntityRepository
             ->setParameter('dateVoyage',$dateVoyage);
 
 
-        if(! (empty($idCompagnie) or $idCompagnie == null))
+        if(! (empty($idCompagnie) || $idCompagnie === null))
         {
 
             $qb->andWhere('trajet.compagnie= :idCompagnie')
                 ->setParameter('idCompagnie', $idCompagnie);
         }
 
-        if(! (empty($idGareDepart) or $idGareDepart == null))
+        if(! (empty($idGareDepart) || $idGareDepart == null))
         {
             $qb->andWhere('trajet.gareDepart= :idGareDepart')
             ->setParameter('idGareDepart',$idGareDepart);
         }
 
-        if(! (empty($idGareArrivee) or $idGareArrivee== null))
+        if(! (empty($idGareArrivee) || $idGareArrivee== null))
         {
             $qb->andWhere('trajet.destination= :idGareArrivee')
             ->setParameter('idGareArrivee',$idGareArrivee);

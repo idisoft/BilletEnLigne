@@ -18,7 +18,6 @@ class MainExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
-        // TODO: Implement load() method.
         $loader= new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }

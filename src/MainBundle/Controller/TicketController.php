@@ -112,7 +112,7 @@ class TicketController extends Controller
     /**
      * @Route("/ticket/validation", name="ticket_validation")
      */
-    public function ticketValidation($ticket)
+    public function ticketValidationAction($ticket)
     {
         $em=$this->getDoctrine()->getManager();
         $em->flush();
@@ -126,7 +126,7 @@ class TicketController extends Controller
     /**
      * @Route("/voyage/ticket/annulation", name="ticket_annulation")
      */
-    public function ticketAnnulation()
+    public function ticketAnnulationAction()
     {
         return $this->render("MainBundle:MesVues:annulation.html.twig");
     }

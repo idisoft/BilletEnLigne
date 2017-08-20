@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class RechercheIndexController extends Controller
 {
-    public function rechercheAction()
+    /*public function rechercheAction()
     {
         $em=$this->getDoctrine()->getManager();
         $form=$this->createForm("MainBundle\Form\RechercheParcoursType");
@@ -19,9 +19,6 @@ class RechercheIndexController extends Controller
                 $form->handleRequest($requete->getCurrentRequest());
                 if ($form->isValid())
                 {
-
-                    dump('yes');
-                    exit();
 
                     //On récupère les données entrées dans le formulaire par l'utilisateur
                     $datas = $this->get('request_stack')->getCurrentRequest()->request->get('sco_mainbundle_recherche_type');
@@ -42,6 +39,6 @@ class RechercheIndexController extends Controller
 
         return $this->render('MainBundle:MesVues:RechercheForm.html.twig',
                             array('form'=>$form->createView()));
-    }
+    }*/
 
 }
