@@ -1,0 +1,15 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% form_theme form 'MainBundle:MesVues:bootstrap_3_layout.html.twig' %}
+
+{% block fos_user_content %}
+
+    {% if error is defined %}
+        <div class="mywell-sm">
+            <div class="alert alert-danger">{{ error|trans }}</div>
+        </div>
+    {% endif %}
+
+    <div class="mywell-sm">
+        {% include "FOSUserBundle:Registration:register_content.html.twig" %}
+    </div>
+{% endblock fos_user_content %}

@@ -1,0 +1,17 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="bg-primary"><center>Votre profile</center></div>
+<div  class="mywell-sm">
+
+    <div>
+        <strong>{{ 'profile.show.username'|trans }}:</strong> {{ user.username }}
+    </div>
+    <div>
+        <strong>{{ 'profile.show.email'|trans }}:</strong> {{ user.email }}
+    </div>
+
+    <div>
+        <strong>Dernière connection:</strong> {{ user.lastLogin|date('d/m/y') }}
+    </div>
+</div>
+    

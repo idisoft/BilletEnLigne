@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <title>{% block title %}MonTicket{% endblock %}</title>
+
+        {#filter='cssrewrite, scssphp'#}
+        {% stylesheets filter='cssrewrite, scssphp'
+            'css/mytheme.css'
+            'css/datePicker.css'
+            'css/responsive.css'
+            'css/slicknav.css'
+            'css/mystyle.css'
+            'css/bootstrap.min.css'
+            'css/font-awesome.min.css'
+            'css/jquery-ui-1.10.4.custom.min.css'
+            %}
+
+            <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen"/>
+
+            {#
+            <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+            <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+
+            <!-- google fonts -->
+            <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Passion+One:400,700,900" rel="stylesheet">
+
+            #}
+
+        {% endstylesheets %}
+
+
+        {% block stylesheets %}
+
+            {#<!-- font awsome icon --->
+            <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+            <!-- Bootstrap and JQuery-->
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css"/>
+            <link rel="stylesheet" href="{{ asset('css/jquery-ui-1.10.4.custom.min.css') }}" type="text/css" />
+
+            <!-- My stylessheets-->
+            <link rel="stylesheet" href="{{ asset('css/mytheme.css') }}" type="text/css" media="screen"/>
+            <link rel="stylesheet" href="{{ asset('css/datePicker.css') }}" type="text/css"/>
+            <link rel="stylesheet" href="{{ asset('css/slicknav.css') }}" type="text/css" media="screen"/>
+            <link rel="stylesheet" href="{{ asset('css/mystyle.css') }}" type="text/css" media="screen"/>
+            <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" type="text/css" media="screen"/>#}
+
+        {% endblock %}
+    </head>
+
+    <body>
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12">
+            {% block Menu %}
+
+            {% endblock %}
+        </div>
+
+        <div id="wrapper">
+            
+            <div id="page-content-wrapper">
+                {% block body %}            
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12">
+                                 {% block content %}
+
+                                 {% endblock %}
+                            </div>
+                         </div>
+
+                    </div>
+
+               {%endblock body%}  
+            </div>
+       </div>
+
+        {% block copy_right %}
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12">
+                <section id="copy_right">
+                    <div class="container">
+                        <div class="row">
+                            <div class="copy_p text-center">
+                                <p>MonTicket Copyright &copy; 2017 <br />
+                                    A FITINISOFT Product</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        {% endblock %}
+
+
+
+        {% javascripts filter='jsqueeze'
+            'js/myscript.js'
+            'js/bootstrap-datepicker.js'
+            'js/jquery.slicknav.min.js'
+            'js/main.js'
+            'js/bootstrap.min.js'
+            'js/jquery-2.1.4.min.js'
+            'js/jquery-ui-1.10.4.custom.min.js'
+            %}
+
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+
+        {% endjavascripts %}
+
+
+       {% block javascripts %}
+           {#<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js')}}"></script>
+            <script type="text/javascript" src="{{ asset('js/jquery-ui-1.10.4.custom.min.js')}}"></script>
+
+           <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
+            <script type="text/javascript" src="{{ asset('js/myscript.js')}}"></script>
+           <script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.js')}}"></script>
+           <script type="text/javascript" src="{{ asset('js/jquery.slicknav.min.js')}}"></script>
+           <script type="text/javascript" src="{{ asset('js/main.js')}}"></script>#}
+       {% endblock %}
+
+    </body>
+
+ 
+</html>

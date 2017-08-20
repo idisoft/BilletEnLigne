@@ -1,0 +1,11 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+    
+    {% include "@User/MesVues/menuSecurite.html.twig" %}
+    <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
+        <br>
+        {% include "FOSUserBundle:Profile:edit_content.html.twig" %}
+    </div>
+
+{% endblock fos_user_content %}
