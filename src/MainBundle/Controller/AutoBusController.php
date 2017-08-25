@@ -17,7 +17,8 @@ class AutoBusController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $repositCompagnie=$em->getRepository("MainBundle:Compagnie");
-        $idCompagnie=$_SESSION['idCompagnie'];
+        $idCompagnie= filter_input(INPUT_SESSION,$_SESSION['idCompagnie']);
+        //$idCompagnie=$_SESSION['idCompagnie'];
         $compagnie=$repositCompagnie->find($idCompagnie);
 
         $autoBus=new AutoBus();
@@ -51,7 +52,8 @@ class AutoBusController extends Controller
     public function modifierAction($idAutoBus)
     {
         $em=$this->getDoctrine()->getManager();
-        $idCompagnie=$_SESSION['idCompagnie'];
+        $idCompagnie= filter_input(INPUT_SESSION,$_SESSION['idCompagnie']);
+        //$idCompagnie=$_SESSION['idCompagnie'];
 
         $repositAutoBus=$em->getRepository("MainBundle:AutoBus");
 
@@ -85,7 +87,9 @@ class AutoBusController extends Controller
     public function supprimerAction($idAutoBus)
     {
         $em=$this->getDoctrine()->getManager();
-        $idCompagnie=$_SESSION['idCompagnie'];
+
+        $idCompagnie= filter_input(INPUT_SESSION,$_SESSION['idCompagnie']);
+        //$idCompagnie=$_SESSION['idCompagnie'];
 
         $repositAutoBus=$em->getRepository("MainBundle:AutoBus");
 
