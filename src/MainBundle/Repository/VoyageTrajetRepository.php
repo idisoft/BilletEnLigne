@@ -21,27 +21,27 @@ class VoyageTrajetRepository extends \Doctrine\ORM\EntityRepository
             ->setParameter('statusVoyage', 'open');
 
 
-        if(! (empty($dateVoyage) || $dateVoyage == null))
+        if(! (empty($dateVoyage) || $dateVoyage === null))
         {
 
             $qb->andWhere('voyage.dateVoyage >= :dateVoyage')
                 ->setParameter('dateVoyage',$dateVoyage);
         }
 
-        if(! (empty($idCompagnie) || $idCompagnie == null))
+        if(! (empty($idCompagnie) || $idCompagnie === null))
         {
 
             $qb->andWhere('trajet.compagnie= :idCompagnie')
                 ->setParameter('idCompagnie', $idCompagnie);
         }
 
-        if(! (empty($idGareDepart) || $idGareDepart == null))
+        if(! (empty($idGareDepart) || $idGareDepart === null))
         {
             $qb->andWhere('trajet.source= :idGareDepart')
                 ->setParameter('idGareDepart',$idGareDepart);
         }
 
-        if(! (empty($idGareArrivee) || $idGareArrivee== null))
+        if(! (empty($idGareArrivee) || $idGareArrivee === null))
         {
             $qb->andWhere('trajet.destination= :idGareArrivee')
                 ->setParameter('idGareArrivee',$idGareArrivee);

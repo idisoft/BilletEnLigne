@@ -5,6 +5,7 @@ services:
 
     main_myCustomServices:
         class: MainBundle\CustomServices\MyCustomServices
+        arguments: ['@request_stack']
         calls:
             - ["setContainer", ["@service_container"]]
 

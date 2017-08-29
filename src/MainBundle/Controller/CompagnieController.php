@@ -66,14 +66,15 @@ class CompagnieController extends Controller
         $repositCompagnie=$em->getRepository('MainBundle:Compagnie');
 
         $compagnie=$repositCompagnie->find($idCompagnie);
-        if ($compagnie == null)
+        if ($compagnie === null)
         {
             $this->get('session')->getFlashBag()->add(
                 'alert_info',
                 'Cette compagnie n\'existe pas');
         }
 
-        $_SESSION['idCompagnie']=$idCompagnie;
+        $this->get("request_stack")->getCurrentRequest()->getSession()->set('idCompagnie',$idCompagnie);
+        //$_SESSION['idCompagnie']=$idCompagnie;
 
         return $this->render("MainBundle:MesVues:compagnieDetails.html.twig",array(
             'compagnie'=>$compagnie

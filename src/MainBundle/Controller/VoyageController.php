@@ -120,14 +120,15 @@ class VoyageController extends Controller
         $repositVoyage=$em->getRepository('MainBundle:Voyage');
 
         $voyage=$repositVoyage->find($idVoyage);
-        if ($voyage == null)
+        if ($voyage === null)
         {
             $this->get('session')->getFlashBag()->add(
                 'alert_info',
                 'Ce voyage n\'existe pas');
         }
 
-        $_SESSION['idVoyage']=$idVoyage;
+        $this->get("request_stack")->getCurrentRequest()->getSession()->set('idVoyage',$idVoyage);
+        //$_SESSION['idVoyage']=$idVoyage;
 
         return $this->render("MainBundle:MesVues:voyageDetails.html.twig",array(
             'voyage'=>$voyage

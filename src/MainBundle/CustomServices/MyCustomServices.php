@@ -11,10 +11,18 @@ namespace MainBundle\CustomServices;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Doctrine\ORM\EntityManager;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 class MyCustomServices
 {
     protected $container;
+    protected $requestStack;
+
+    public function __construct(RequestStack $reqStack)
+    {
+        $this->requestStack=$reqStack;
+
+    }
 
     public function setContainer(ContainerInterface $container = null)
     {
@@ -23,8 +31,11 @@ class MyCustomServices
 
     public function initEnv()
     {
-        $_SESSION['idUser']=$this->getCurentUser()->getId();
-        $_SESSION['idCompagnie']=$this->getCurentCompagnieId();
+        $this->requestStack->getCurrentRequest()->getSession()->set('idCompagnie',$this->getCurentCompagnieId());
+        $this->requestStack->getCurrentRequest()->getSession()->set('idUser',$this->getCurentUser()->getId());
+
+        //$_SESSION['idUser']=$this->getCurentUser()->getId();
+        //$_SESSION['idCompagnie']=$this->getCurentCompagnieId();
 
         return;
 
@@ -73,7 +84,7 @@ class MyCustomServices
         $repositCompagnie=$em->getRepository('MainBundle:Compagnie');
 
         $compagnie=$repositCompagnie->find($idCompagnie);
-        if ($compagnie == null)
+        if ($compagnie === null)
         {
             $this->get('session')->getFlashBag()->add('alert_info','Cette compagnie n\'existe pas');
             return null;
@@ -86,14 +97,17 @@ class MyCustomServices
     {
 
         $em=$this->container->get('doctrine.orm.entity_manager');
+
+        $idCompagnie=$this->requestStack->getCurrentRequest()->getSession()->get('idCompagnie');
+
         $repositVoyage=$em->getRepository('MainBundle:Voyage');
         $repositCompagnie=$em->getRepository('MainBundle:Compagnie');
         $repositTicket=$em->getRepository('MainBundle:Ticket');
         $repositTrajet=$em->getRepository('MainBundle:Trajet');
 
         $stats['nbreCompagnie']=$repositCompagnie->getNbreCompagnie();
-        $stats['nbreTrajetByCurrentCompagnie']=$repositTrajet->getNbreTrajetByCurrentCompagnie();
-        $stats['nbreVoyageOuvert']=$repositVoyage->getNbreVoyageByStatusByCompagnie('open');
+        $stats['nbreTrajetByCurrentCompagnie']=$repositTrajet->getNbreTrajetByCurrentCompagnie($idCompagnie);
+        $stats['nbreVoyageOuvert']=$repositVoyage->getNbreVoyageByCompagnieAndStatus($idCompagnie,'open');
         $stats['nbreTicket']=$repositTicket->getNbreTicketVenduByCurrentUser();
 
         return $stats;

@@ -17,8 +17,11 @@ class AutoBusController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $repositCompagnie=$em->getRepository("MainBundle:Compagnie");
-        $idCompagnie= filter_input(INPUT_SESSION,$_SESSION['idCompagnie']);
+        $req=$this->get("request_stack");
+
+        $idCompagnie=$req->getCurrentRequest()->getSession()->get('idCompagnie');
         //$idCompagnie=$_SESSION['idCompagnie'];
+
         $compagnie=$repositCompagnie->find($idCompagnie);
 
         $autoBus=new AutoBus();
@@ -26,7 +29,7 @@ class AutoBusController extends Controller
 
         $form=$this->createForm("MainBundle\Form\AutoBusType",$autoBus);
 
-        $req=$this->get("request_stack");
+
 
         if ($req->getCurrentRequest()->getMethod() == 'POST')
         {
@@ -52,7 +55,7 @@ class AutoBusController extends Controller
     public function modifierAction($idAutoBus)
     {
         $em=$this->getDoctrine()->getManager();
-        $idCompagnie= filter_input(INPUT_SESSION,$_SESSION['idCompagnie']);
+        $idCompagnie=$this->requestStack->getCurrentRequest()->getSession()->get('idCompagnie');
         //$idCompagnie=$_SESSION['idCompagnie'];
 
         $repositAutoBus=$em->getRepository("MainBundle:AutoBus");
@@ -88,7 +91,7 @@ class AutoBusController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
 
-        $idCompagnie= filter_input(INPUT_SESSION,$_SESSION['idCompagnie']);
+        $idCompagnie=$this->requestStack->getCurrentRequest()->getSession()->get('idCompagnie');
         //$idCompagnie=$_SESSION['idCompagnie'];
 
         $repositAutoBus=$em->getRepository("MainBundle:AutoBus");

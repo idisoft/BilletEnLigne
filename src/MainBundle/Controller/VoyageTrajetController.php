@@ -16,7 +16,9 @@ class VoyageTrajetController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $repositVoyage=$em->getRepository("MainBundle:Voyage");
-        $idVoyage=$_SESSION['idVoyage'];
+        $idVoyage=$this->requestStack->getCurrentRequest()->getSession()->get('idVoyage');
+        //$idVoyage=$_SESSION['idVoyage'];
+
         $voyage=$repositVoyage->find($idVoyage);
 
         $voyageTrajet=new VoyageTrajet();
@@ -52,7 +54,9 @@ class VoyageTrajetController extends Controller
     public function modifierAction($idVoyageTrajet)
     {
         $em=$this->getDoctrine()->getManager();
-        $idVoyage=$_SESSION['idVoyage'];
+
+        $idVoyage=$this->requestStack->getCurrentRequest()->getSession()->get('idVoyage');
+        //$idVoyage=$_SESSION['idVoyage'];
 
         $repositVoyageTrajet=$em->getRepository("MainBundle:VoyageTrajet");
 
@@ -93,7 +97,8 @@ class VoyageTrajetController extends Controller
     public function supprimerAction($idVoyageTrajet)
     {
         $em=$this->getDoctrine()->getManager();
-        $idVoyage=$_SESSION['idVoyage'];
+        $idVoyage=$this->requestStack->getCurrentRequest()->getSession()->get('idVoyage');
+        //$idVoyage=$_SESSION['idVoyage'];
 
         $repositVoyageTrajet=$em->getRepository("MainBundle:VoyageTrajet");
 
@@ -135,8 +140,9 @@ class VoyageTrajetController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $repositVoyageTrajet=$em->getRepository('MainBundle:VoyageTrajet');
+        $idCompagnie=$this->requestStack->getCurrentRequest()->getSession()->get('idCompagnie');
 
-        $listeVoyageTrajets=$repositVoyageTrajet->findBy(array('compagnie'=>$_SESSION['idCompagnie']));
+        $listeVoyageTrajets=$repositVoyageTrajet->findBy(array('compagnie'=>$idCompagnie));
 
         return $this->render("MainBundle:MesVues:listeVoyageTrajet.html.twig",array(
             'listeVoyageTrajets'=>$listeVoyageTrajets

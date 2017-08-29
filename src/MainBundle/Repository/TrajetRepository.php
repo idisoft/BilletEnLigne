@@ -57,14 +57,14 @@ class TrajetRepository extends \Doctrine\ORM\EntityRepository
     }
 
 
-    public function getNbreTrajetByCurrentCompagnie()
+    public function getNbreTrajetByCurrentCompagnie($idCompagnie)
     {
         $qb=$this->createQueryBuilder('trajet');
 
-        if (! is_null($_SESSION['idCompagnie']))
+        if (! is_null($idCompagnie))
         {
             $qb->andWhere('trajet.compagnie= :idCompagnie')
-                ->setParameter('idCompagnie', $_SESSION['idCompagnie']);
+                ->setParameter('idCompagnie', $idCompagnie);
         }
 
         $qb->select('count(trajet.id)');

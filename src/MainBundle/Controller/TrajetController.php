@@ -15,7 +15,8 @@ class TrajetController extends Controller
     public function adminTrajetsAction()
     {
         $idCompagnie=$this->container->get('main_myCustomServices')->getCurentCompagnieId();
-        $_SESSION['idCompagnie']=$idCompagnie;
+        $this->get("request_stack")->getCurrentRequest()->getSession()->set('idCompagnie',$idCompagnie);
+        //$_SESSION['idCompagnie']=$idCompagnie;
 
         return $this->render('MainBundle:MesVues:adminTrajets.html.twig',array('idCompagnie'=>$idCompagnie));
     }
@@ -28,7 +29,7 @@ class TrajetController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $repositCompagnie=$em->getRepository("MainBundle:Compagnie");
-        $idCompagnie=$_SESSION['idCompagnie'];
+        $idCompagnie=$this->requestStack->getCurrentRequest()->getSession()->get('idCompagnie');
         $compagnie=$repositCompagnie->find($idCompagnie);
 
         $trajet=new Trajet();
@@ -63,7 +64,7 @@ class TrajetController extends Controller
     public function modifierAction($idTrajet)
     {
         $em=$this->getDoctrine()->getManager();
-        $idCompagnie=$_SESSION['idCompagnie'];
+        //$idCompagnie=$this->requestStack->getCurrentRequest()->getSession()->get('idCompagnie');
 
         $repositTrajet=$em->getRepository("MainBundle:Trajet");
 
@@ -82,7 +83,6 @@ class TrajetController extends Controller
                 $em->flush();
 
                 return $this->redirect($this->generateUrl("admin_trajets"));
-
             }
         }
 
@@ -138,8 +138,9 @@ class TrajetController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $repositTrajet=$em->getRepository('MainBundle:Trajet');
+        $idCompagnie=$this->requestStack->getCurrentRequest()->getSession()->get('idCompagnie');
 
-        $listeTrajets=$repositTrajet->findBy(array('compagnie'=>$_SESSION['idCompagnie']));
+        $listeTrajets=$repositTrajet->findBy(array('compagnie'=>$idCompagnie));
 
         return $this->render("MainBundle:MesVues:listeTrajet.html.twig",array(
             'listeTrajets'=>$listeTrajets

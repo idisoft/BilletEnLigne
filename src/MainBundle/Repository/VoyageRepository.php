@@ -52,13 +52,13 @@ class VoyageRepository extends \Doctrine\ORM\EntityRepository
                 ->setParameter('idCompagnie', $idCompagnie);
         }
 
-        if(! (empty($idGareDepart) || $idGareDepart == null))
+        if(! (empty($idGareDepart) || $idGareDepart === null))
         {
             $qb->andWhere('trajet.gareDepart= :idGareDepart')
             ->setParameter('idGareDepart',$idGareDepart);
         }
 
-        if(! (empty($idGareArrivee) || $idGareArrivee== null))
+        if(! (empty($idGareArrivee) || $idGareArrivee=== null))
         {
             $qb->andWhere('trajet.destination= :idGareArrivee')
             ->setParameter('idGareArrivee',$idGareArrivee);
@@ -67,17 +67,17 @@ class VoyageRepository extends \Doctrine\ORM\EntityRepository
         return $qb->getQuery()->getResult();
     }
 
-    public function getNbreVoyageByStatusByCompagnie($status)
+    public function getNbreVoyageByCompagnieAndStatus($idCompagnie,$status)
     {
         $qb=$this->createQueryBuilder('voyage')
                 ->join('voyage.autoBus', 'autoBus')
                 ->where('voyage.statusVoyage= :status')
                 ->setParameter('status', $status);
 
-        if (! is_null($_SESSION['idCompagnie']))
+        if (! is_null($idCompagnie))
         {
             $qb->andWhere('autoBus.compagnie= :idCompagnie')
-                ->setParameter('idCompagnie', $_SESSION['idCompagnie']);
+                ->setParameter('idCompagnie', $idCompagnie);
         }
 
         $qb->select('count(voyage.id)');
