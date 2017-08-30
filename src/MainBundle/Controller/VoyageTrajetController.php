@@ -17,7 +17,6 @@ class VoyageTrajetController extends Controller
         $em=$this->getDoctrine()->getManager();
         $repositVoyage=$em->getRepository("MainBundle:Voyage");
         $idVoyage=$this->requestStack->getCurrentRequest()->getSession()->get('idVoyage');
-        //$idVoyage=$_SESSION['idVoyage'];
 
         $voyage=$repositVoyage->find($idVoyage);
 
@@ -56,7 +55,6 @@ class VoyageTrajetController extends Controller
         $em=$this->getDoctrine()->getManager();
 
         $idVoyage=$this->requestStack->getCurrentRequest()->getSession()->get('idVoyage');
-        //$idVoyage=$_SESSION['idVoyage'];
 
         $repositVoyageTrajet=$em->getRepository("MainBundle:VoyageTrajet");
 
@@ -98,7 +96,6 @@ class VoyageTrajetController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $idVoyage=$this->requestStack->getCurrentRequest()->getSession()->get('idVoyage');
-        //$idVoyage=$_SESSION['idVoyage'];
 
         $repositVoyageTrajet=$em->getRepository("MainBundle:VoyageTrajet");
 

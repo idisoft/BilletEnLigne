@@ -27,11 +27,6 @@ class MyCustomServices
 
     }
 
-/*    public function setContainer(ContainerInterface $container = null)
-    {
-        $this->container = $container;
-    }*/
-
     public function initEnv()
     {
         $this->requestStack->getCurrentRequest()->getSession()->set('idCompagnie',$this->getCurentCompagnieId());
@@ -43,10 +38,6 @@ class MyCustomServices
 
     public function getCurentUser()
     {
-
-        //$security=$this->container->get('security.token_storage');
-        //$security=$this->securityContext;
-
         // On récupère le token
         $token = $this->tokenStorage->getToken();
 

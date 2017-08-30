@@ -87,11 +87,6 @@ class TicketController extends Controller
                 $voyageTrajet->setNbrePlaceRestant($voyageTrajet->getNbrePlaceRestant() - 1);
                 $em->persist($ticket,$voyageTrajet);
 
-                /*return $this->render("MainBundle:MesVues:payement.html.twig",array(
-                    'code'=>$code,
-                    'prixTicket'=>$prix
-                ));*/
-
                 $em->flush();
 
                 $this->addFlash('alert_info','TICKET PRIT AVEC SUCCES, CI-DESSOUS LES DETAILS');

@@ -20,7 +20,6 @@ class AutoBusController extends Controller
         $req=$this->get("request_stack");
 
         $idCompagnie=$req->getCurrentRequest()->getSession()->get('idCompagnie');
-        //$idCompagnie=$_SESSION['idCompagnie'];
 
         $compagnie=$repositCompagnie->find($idCompagnie);
 
@@ -56,7 +55,6 @@ class AutoBusController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $idCompagnie=$this->requestStack->getCurrentRequest()->getSession()->get('idCompagnie');
-        //$idCompagnie=$_SESSION['idCompagnie'];
 
         $repositAutoBus=$em->getRepository("MainBundle:AutoBus");
 
@@ -92,7 +90,6 @@ class AutoBusController extends Controller
         $em=$this->getDoctrine()->getManager();
 
         $idCompagnie=$this->requestStack->getCurrentRequest()->getSession()->get('idCompagnie');
-        //$idCompagnie=$_SESSION['idCompagnie'];
 
         $repositAutoBus=$em->getRepository("MainBundle:AutoBus");
 

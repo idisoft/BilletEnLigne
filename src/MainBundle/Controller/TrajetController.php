@@ -16,7 +16,6 @@ class TrajetController extends Controller
     {
         $idCompagnie=$this->container->get('main_myCustomServices')->getCurentCompagnieId();
         $this->get("request_stack")->getCurrentRequest()->getSession()->set('idCompagnie',$idCompagnie);
-        //$_SESSION['idCompagnie']=$idCompagnie;
 
         return $this->render('MainBundle:MesVues:adminTrajets.html.twig',array('idCompagnie'=>$idCompagnie));
     }
@@ -64,7 +63,6 @@ class TrajetController extends Controller
     public function modifierAction($idTrajet)
     {
         $em=$this->getDoctrine()->getManager();
-        //$idCompagnie=$this->requestStack->getCurrentRequest()->getSession()->get('idCompagnie');
 
         $repositTrajet=$em->getRepository("MainBundle:Trajet");
 

@@ -128,7 +128,6 @@ class VoyageController extends Controller
         }
 
         $this->get("request_stack")->getCurrentRequest()->getSession()->set('idVoyage',$idVoyage);
-        //$_SESSION['idVoyage']=$idVoyage;
 
         return $this->render("MainBundle:MesVues:voyageDetails.html.twig",array(
             'voyage'=>$voyage

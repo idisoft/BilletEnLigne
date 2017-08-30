@@ -74,7 +74,6 @@ class CompagnieController extends Controller
         }
 
         $this->get("request_stack")->getCurrentRequest()->getSession()->set('idCompagnie',$idCompagnie);
-        //$_SESSION['idCompagnie']=$idCompagnie;
 
         return $this->render("MainBundle:MesVues:compagnieDetails.html.twig",array(
             'compagnie'=>$compagnie
