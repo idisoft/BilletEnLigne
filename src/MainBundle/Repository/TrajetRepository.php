@@ -38,13 +38,11 @@ class TrajetRepository extends \Doctrine\ORM\EntityRepository
         return $qb;
     }
 
-    public function findByCurrentCompagnie()             // utiliser dans Formulaire Parcours
+    public function findByCurrentCompagnie($idCompagnie)             // utiliser dans Formulaire Parcours
     {
         // Pour le Formulaire Parcours
 
         $qb=$this->createQueryBuilder('trajet');
-
-        $idCompagnie=$_SESSION['idCompagnie'];
 
         if(! is_null($idCompagnie))
         {

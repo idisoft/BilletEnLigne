@@ -136,7 +136,9 @@ class TicketController extends Controller
     {
         $ticketRep=$this->getDoctrine()->getManager()->getRepository('MainBundle:Ticket');
 
-        $listeTickets=$ticketRep->findByCurrentUser();
+        $idUser=$this->get("request_stack")->getCurrentRequest()->getSession()->get('idUser');
+
+        $listeTickets=$ticketRep->findByCurrentUser($idUser);
 
         return $this->render("MainBundle:MesVues:listeTicket.html.twig",array(
             'listeTickets'=>$listeTickets

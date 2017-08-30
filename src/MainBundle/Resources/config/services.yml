@@ -9,4 +9,8 @@ services:
         calls:
             - ["setContainer", ["@service_container"]]
 
-
+    main_form.voyage.type:
+        class: MainBundle\Form\VoyageType
+        arguments: ['@request_stack']
+        tags:
+            - { name: form.type }

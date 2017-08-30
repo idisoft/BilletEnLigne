@@ -12,9 +12,19 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 class VoyageType extends AbstractType
 {
+
+    protected $requestStack;
+
+
+    public function __construct(RequestStack $reqStack)
+    {
+        $this->requestStack=$reqStack;
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -34,7 +44,8 @@ class VoyageType extends AbstractType
                 'class'=>'MainBundle\Entity\AutoBus',
                 'choice_label'=>'Code',
                 'query_builder'=>(function(AutoBusRepository $rp){
-                        return $rp->findByCurrentCompagnie();
+                        $idCompagnie=$this->requestStack->getCurrentRequest()->getSession()->get('idCompagnie');
+                        return $rp->findByCurrentCompagnie($idCompagnie);
                 })
             ))
             ->add('statusVoyage',ChoiceType::class, array(

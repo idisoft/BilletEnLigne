@@ -34,9 +34,6 @@ class MyCustomServices
         $this->requestStack->getCurrentRequest()->getSession()->set('idCompagnie',$this->getCurentCompagnieId());
         $this->requestStack->getCurrentRequest()->getSession()->set('idUser',$this->getCurentUser()->getId());
 
-        //$_SESSION['idUser']=$this->getCurentUser()->getId();
-        //$_SESSION['idCompagnie']=$this->getCurentCompagnieId();
-
         return;
 
     }

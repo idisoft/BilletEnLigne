@@ -10,27 +10,27 @@ namespace MainBundle\Repository;
  */
 class TicketRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function findByCurrentUser()
+    public function findByCurrentUser($idUser)
     {
         $qb=$this->createQueryBuilder('ticket');
 
-        if (! is_null($_SESSION['idUser']))
+        if (! is_null($idUser))
         {
             $qb->where('ticket.user= :idUser')
-            ->setParameter('idUser', $_SESSION['idUser']);
+            ->setParameter('idUser', $idUser);
         }
 
         return $qb->getQuery()->getResult();
     }
 
-    public function getNbreTicketVenduByCurrentUser()
+    public function getNbreTicketVenduByCurrentUser($idUser)
     {
         $qb=$this->createQueryBuilder('ticket');
 
-        if (! is_null($_SESSION['idUser']))
+        if (! is_null($idUser))
         {
             $qb->where('ticket.user= :idUser')
-                ->setParameter('idUser', $_SESSION['idUser']);
+                ->setParameter('idUser', $idUser);
         }
 
         $qb->select('count(ticket.id)');
