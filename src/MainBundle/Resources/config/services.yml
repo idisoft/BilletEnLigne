@@ -5,9 +5,9 @@ services:
 
     main_myCustomServices:
         class: MainBundle\CustomServices\MyCustomServices
-        arguments: ['@request_stack']
-        calls:
-            - ["setContainer", ["@service_container"]]
+        arguments: ['@request_stack', "@security.token_storage"]
+#        calls:
+#            - ["setContainer", ["@service_container"]]
 
     main_form.voyage.type:
         class: MainBundle\Form\VoyageType

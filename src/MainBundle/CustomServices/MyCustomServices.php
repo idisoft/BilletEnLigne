@@ -12,22 +12,25 @@ namespace MainBundle\CustomServices;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 
 class MyCustomServices
 {
+    private $tokenStorage;
     protected $container;
     protected $requestStack;
 
-    public function __construct(RequestStack $reqStack)
+    public function __construct(RequestStack $reqStack, TokenStorage $tokenS)
     {
         $this->requestStack=$reqStack;
+        $this->tokenStorage=$tokenS;
 
     }
 
-    public function setContainer(ContainerInterface $container = null)
+/*    public function setContainer(ContainerInterface $container = null)
     {
         $this->container = $container;
-    }
+    }*/
 
     public function initEnv()
     {
@@ -41,10 +44,11 @@ class MyCustomServices
     public function getCurentUser()
     {
 
-        $security=$this->container->get('security.token_storage');
+        //$security=$this->container->get('security.token_storage');
+        //$security=$this->securityContext;
 
         // On récupère le token
-        $token = $security->getToken();
+        $token = $this->tokenStorage->getToken();
 
         // Si la requête courante n'est pas derrière un pare-feu, $token est null. Sinon, on récupère l'utilisateur
         $user = $token->getUser();
@@ -96,6 +100,7 @@ class MyCustomServices
         $em=$this->container->get('doctrine.orm.entity_manager');
 
         $idCompagnie=$this->requestStack->getCurrentRequest()->getSession()->get('idCompagnie');
+        $idUser=$this->requestStack->getCurrentRequest()->getSession()->get('idUser');
 
         $repositVoyage=$em->getRepository('MainBundle:Voyage');
         $repositCompagnie=$em->getRepository('MainBundle:Compagnie');
@@ -105,7 +110,7 @@ class MyCustomServices
         $stats['nbreCompagnie']=$repositCompagnie->getNbreCompagnie();
         $stats['nbreTrajetByCurrentCompagnie']=$repositTrajet->getNbreTrajetByCurrentCompagnie($idCompagnie);
         $stats['nbreVoyageOuvert']=$repositVoyage->getNbreVoyageByCompagnieAndStatus($idCompagnie,'open');
-        $stats['nbreTicket']=$repositTicket->getNbreTicketVenduByCurrentUser();
+        $stats['nbreTicket']=$repositTicket->getNbreTicketVenduByCurrentUser($idUser);
 
         return $stats;
 
