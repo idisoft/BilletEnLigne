@@ -39,7 +39,6 @@ class AutoBusController extends Controller
                 $em->flush();
 
                 return $this->redirect($this->generateUrl("compagnie_details",array('idCompagnie'=>$idCompagnie)));
-
             }
         }
 

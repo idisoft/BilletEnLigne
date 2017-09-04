@@ -17,13 +17,14 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 class MyCustomServices
 {
     private $tokenStorage;
-    protected $container;
+    protected $em;
     protected $requestStack;
 
-    public function __construct(RequestStack $reqStack, TokenStorage $tokenS)
+    public function __construct(RequestStack $reqStack, TokenStorage $tokenS, EntityManager $emanager)
     {
         $this->requestStack=$reqStack;
         $this->tokenStorage=$tokenS;
+        $this->em=$emanager;
 
     }
 
@@ -88,15 +89,13 @@ class MyCustomServices
     public function getStats()
     {
 
-        $em=$this->container->get('doctrine.orm.entity_manager');
-
         $idCompagnie=$this->requestStack->getCurrentRequest()->getSession()->get('idCompagnie');
         $idUser=$this->requestStack->getCurrentRequest()->getSession()->get('idUser');
 
-        $repositVoyage=$em->getRepository('MainBundle:Voyage');
-        $repositCompagnie=$em->getRepository('MainBundle:Compagnie');
-        $repositTicket=$em->getRepository('MainBundle:Ticket');
-        $repositTrajet=$em->getRepository('MainBundle:Trajet');
+        $repositVoyage=$this->em->getRepository('MainBundle:Voyage');
+        $repositCompagnie=$this->em->getRepository('MainBundle:Compagnie');
+        $repositTicket=$this->em->getRepository('MainBundle:Ticket');
+        $repositTrajet=$this->em->getRepository('MainBundle:Trajet');
 
         $stats['nbreCompagnie']=$repositCompagnie->getNbreCompagnie();
         $stats['nbreTrajetByCurrentCompagnie']=$repositTrajet->getNbreTrajetByCurrentCompagnie($idCompagnie);

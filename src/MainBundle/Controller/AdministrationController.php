@@ -16,6 +16,7 @@ class AdministrationController extends Controller
      */
     public function indexAction()
     {
+
         //j'initialise mon env idCompagnie, idUser pour adapter l'env à celui qui est connecté
         $this->get('main_mycustomservices')->initEnv();
 
