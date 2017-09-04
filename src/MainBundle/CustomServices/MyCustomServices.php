@@ -30,6 +30,7 @@ class MyCustomServices
 
     public function initEnv()
     {
+
         $this->requestStack->getCurrentRequest()->getSession()->set('idCompagnie',$this->getCurentCompagnieId());
         $this->requestStack->getCurrentRequest()->getSession()->set('idUser',$this->getCurentUser()->getId());
 

@@ -75,11 +75,11 @@
                             {% if is_granted('ROLE_SELLER') %}
                                 <li class="active"><a href="{{ path('admin_home_page') }}"> Dashboard<span class="sr-only">(current)</span></a></li>
                                 <li><a href="{{ path('admin_tickets') }}">Tickets</a></li>
-                                {% elseif is_granted('ROLE_ADMIN') %}
-                                    <li><a href="{{ path('admin_voyage') }}">Voyages</a></li>
-                                    <li><a href="{{ path('admin_trajets') }}">Trajets</a></li>
-                                {% elseif is_granted('ROLE_SUPER_ADMIN') %}
-                                    <li><a href="{{ path('admin_compagnie') }}">Compagnies</a></li>
+                            {% elseif is_granted('ROLE_ADMIN') %}
+                                <li><a href="{{ path('admin_voyage') }}">Voyages</a></li>
+                                <li><a href="{{ path('admin_trajets') }}">Trajets</a></li>
+                            {% elseif is_granted('ROLE_SUPER_ADMIN') %}
+                                <li><a href="{{ path('admin_compagnie') }}">Compagnies</a></li>
                             {% endif %}
 
                         </ul>
