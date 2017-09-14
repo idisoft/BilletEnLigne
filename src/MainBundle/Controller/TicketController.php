@@ -103,6 +103,62 @@ class TicketController extends Controller
             'ent'=>'TICKET'));
     }
 
+    /**
+     * @Route("/ticket/modifier/id={idTicket}", name="ticket_modifier")
+     */
+    public function modifierAction($idTicket)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $idCompagnie=$this->get("request_stack")->getCurrentRequest()->getSession()->get('idCompagnie');
+
+        $repositTicket=$em->getRepository("MainBundle:Ticket");
+
+        $ticket=$repositTicket->find($idTicket);
+
+        $form=$this->createForm("MainBundle\Form\TicketType",$ticket);
+
+        $req=$this->get("request_stack");
+
+        if ($req->getCurrentRequest()->getMethod() == 'POST')
+        {
+            $form->handleRequest($req->getCurrentRequest());
+            if ($form->isValid())
+            {
+                $em->persist($ticket);
+                $em->flush();
+
+                return $this->redirect($this->generateUrl("admin_tickets"));
+
+            }
+        }
+
+        return $this->render('MainBundle:MesVues:modeleNouveau.html.twig',array(
+            'form'=>$form->createView(),
+            'ent'=>'AUTOBUS'));
+    }
+
+    /**
+     * @Route("/ticket/supprimer/id={idTicket}", name="ticket_supprimer")
+     */
+    /*public function supprimerAction($idAutoBus)
+    {
+        $em=$this->getDoctrine()->getManager();
+
+        $idCompagnie=$this->get("request_stack")->getCurrentRequest()->getSession()->get('idCompagnie');
+
+        $repositAutoBus=$em->getRepository("MainBundle:AutoBus");
+
+        $autoBus=$repositAutoBus->find($idAutoBus);
+
+        if ($autoBus !== null)
+        {
+            $em->remove($autoBus);
+            $em->flush();
+            return $this->redirect($this->generateUrl("compagnie_details",array('idCompagnie'=>$idCompagnie)));
+
+        }
+
+    }*/
 
     /**
      * @Route("/ticket/validation", name="ticket_validation")

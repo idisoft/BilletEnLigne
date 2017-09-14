@@ -3,6 +3,8 @@
 namespace MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Misd\PhoneNumberBundle\Validator\Constraints\PhoneNumber as AssertPhoneNumber;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Compagnie
@@ -25,6 +27,8 @@ class Compagnie
      * @var string
      *
      * @ORM\Column(name="NomComp", type="string", length=50)
+     * @Assert\NotBlank()
+     * @Assert\Length(max="30", maxMessage="Nom de compagnie  trop long !!")
      */
     private $nomComp;
 
@@ -32,6 +36,7 @@ class Compagnie
      * @var string
      *
      * @ORM\Column(name="AdresseComp", type="string", length=255)
+     * @Assert\Length(max="100", maxMessage="Adresse trop longue !!")
      */
     private $adresseComp;
 
@@ -39,8 +44,21 @@ class Compagnie
      * @var string
      *
      * @ORM\Column(name="TelComp", type="phone_number", nullable=true)
+     * @AssertPhoneNumber(defaultRegion="ML", message="Ceci n'est pas un numéro valide")
+    )
      */
     private $telComp;
+
+
+    /*
+    * ######################## RELATIONSHIP #######################
+    */
+
+    /**
+     * @ORM\OneToMany(targetEntity="MainBundle\Entity\AutoBus", mappedBy="compagnie", cascade={"all"})
+     */
+    private $autoBus;
+
 
 
     /**
@@ -115,6 +133,22 @@ class Compagnie
     public function setTelComp($telComp)
     {
         $this->telComp = $telComp;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAutoBus()
+    {
+        return $this->autoBus;
+    }
+
+    /**
+     * @param mixed $autoBus
+     */
+    public function setAutoBus($autoBus)
+    {
+        $this->autoBus = $autoBus;
     }
 
 }

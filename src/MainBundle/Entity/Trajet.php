@@ -26,7 +26,7 @@ class Trajet
      * @var int
      *
      * @ORM\Column(name="Distance", type="integer", nullable=true)
-     * @Assert\Range(min=50, max="3000", invalidMessage="Veuillez fournir une distance raisonnable svp !")
+     * @Assert\Range(min=50, max="3000", maxMessage="Veuillez fournir une distance raisonnable svp !")
      */
     private $distance;
 
@@ -34,6 +34,7 @@ class Trajet
      * @var int
      *
      * @ORM\Column(name="PrixTrajet", type="integer")
+     * @Assert\Length(max="5", maxMessage="Le prix semble incorrect !!")
      */
     private $prixTrajet;
 

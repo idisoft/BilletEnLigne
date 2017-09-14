@@ -3,7 +3,7 @@
 namespace MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Misd\PhoneNumberBundle\Validator\Constraints\PhoneNumber as AssertPhoneNumbe;
+use Misd\PhoneNumberBundle\Validator\Constraints\PhoneNumber as AssertPhoneNumber;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -50,7 +50,7 @@ class Ticket
      * @var string
      *
      * @ORM\Column(name="TelClient", type="phone_number")
-     * @AssertPhoneNumbe(message="Veuillez entrer un numéro de téléphone correcte svp !")
+     * @AssertPhoneNumber(defaultRegion="ML", message="Ceci n'est pas un numéro valide")
      */
     private $telClient;
 

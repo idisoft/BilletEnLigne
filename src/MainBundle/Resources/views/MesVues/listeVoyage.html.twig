@@ -13,7 +13,7 @@
             <tr>
                 <td>{{voyage.autoBus.code}} </td>
                 <td>{{voyage.dateVoyage | date('d-M-y')}} </td>
-                <td>{{voyage.heureDepart | date('H-m')}}</td>
+                <td>{{voyage.heureDepart | date('H:i')}}</td>
                 <td>
                     {%for voyageTrajet in voyage.voyageTrajets%}
                         {{voyageTrajet.trajet.trajet}} <br/>

@@ -20,9 +20,10 @@
     </div>
 
     <div class="input-group input-group-sm">
-        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-        <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+        <label for="remember_me" style="color: #f58020;">Se rappeler de moi</label> {#{{ 'security.login.remember_me'|trans }}</label>#}
+        <input type="checkbox" id="remember_me" name="_remember_me" value="on" class="check"/>
+
     </div>
 
-    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" class="btn btn-primary btn-xs"/>
+    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" class="btn btn-login"/>
 </form>

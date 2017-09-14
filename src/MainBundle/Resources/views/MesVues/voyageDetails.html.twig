@@ -6,9 +6,9 @@
     <br>
     <div class="row">{{parent()}}</div>
     
-    <div class="mywell-sm">
+    <div class="mywell-sm" style="text-align: center">
         Date Voyage: {{ voyage.dateVoyage|date('d-M-y') }}  -----------
-        Heure Départ: {{ voyage.heureDepart|date('H:m')}}   -----------
+        Heure Départ: {{ voyage.heureDepart|date('H:i')}}   -----------
         AutoBus: {{ voyage.autoBus.code }}  <br/>
     </div>
     <ul class="nav nav-tabs">

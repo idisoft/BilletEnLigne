@@ -16,7 +16,7 @@
     </div>
 
     <div class="row">
-        {#{% if app.request.hasPreviousSession %}
+        {% if app.request.hasPreviousSession %}
             {% for type, messages in app.session.flashbag.all() %}
                 {% for message in messages %}
                     <div class="flash-{{ type }}">
@@ -25,7 +25,7 @@
                 {% endfor %}
             {% endfor %}
         {% endif %}
-#}
+
         {% for type, messages in app.session.flashbag.all() %}
 
             {% for key, message in messages %}

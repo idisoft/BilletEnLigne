@@ -23,7 +23,8 @@ class TrajetType extends AbstractType
             )
         ))
             ->add('prixTrajet', MoneyType::class, array(
-                'label'=>'Prix du trajet'
+                'label'=>'Prix du trajet ',
+                'currency'=>'XOF'
             ))
             ->add('source', EntityType::class,array(
                 'label'=>'Gare de depart',

@@ -20,7 +20,7 @@ class CompagnieType extends AbstractType
             'label'=>'Nom de la compagnie'
         ))
             ->add('adresseComp', TextType::class,array(
-                'label'=>'Nom de la compagnie'
+                'label'=>'Adresse de la compagnie'
             ))
             ->add('telComp', PhoneNumberType::class, array(
                 'default_region' => 'ML',

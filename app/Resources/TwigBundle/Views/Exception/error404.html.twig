@@ -1,12 +1,23 @@
-{% extends "MainBundle::adminLayout.html.twig" %}
+{% extends "::layout.html.twig" %}
 
 {% block content %}
-    <br><br><br>
-    <div class="col-md-12 col-lg-12">
-        <h3>Oops!!!! PAGE INTROUVABLE!!404</h3>
-        <h4>
-            La page que vous démandé est introuvable
-        </h4>
+    <br><br><br><br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-offset-2 col-lg-2  col-md-offset-2 col-md-2 col-sm-6" style="text-align: right">
+                <a href="{{ path('admin_home_page') }}"><img src="{{ asset('template_img/logo.png') }}" alt="" /></a>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6" style="text-align: center">
+                <h3>Oops!!!! PAGE INTROUVABLE!!404</h3>
+                <h4>
+                    La page que vous démandé est introuvable. <br/><br/><br/>
+                    <a href="{{ path('home_page') }}" class="btn btn-login"> Retour Accueil </a>
+                </h4>
+            </div>
+        </div>
     </div>
 {%endblock%}
+
+{% block copy_right %}
+{% endblock %}
 

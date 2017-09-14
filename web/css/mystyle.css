@@ -63,11 +63,6 @@ label {
 .btn.btn-info.sub {
     background: #f8941a;
     color: #fff;
-    border: 0px solid;
-    width: 80px;
-    font-size: 18px;
-    font-weight: normal;
-    height: 36px;
     margin-top: 27px;
 }
 section#copy_right {
@@ -345,7 +340,7 @@ button.btn-new {
     display:block;
 }
 #footer_bg{
-	height:45px;
+	height:55px;
 	background:#1b448d;
     display:block;
 }
@@ -368,8 +363,8 @@ button.btn-new {
 }
 
 
-button.btn-logine {
-    width: 90%;
+.btn-login {
+    width: 100%;
     background: #1b4e99;
     color: #fff;
     line-height: 35px;

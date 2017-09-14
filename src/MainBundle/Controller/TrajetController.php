@@ -28,7 +28,7 @@ class TrajetController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $repositCompagnie=$em->getRepository("MainBundle:Compagnie");
-        $idCompagnie=$this->requestStack->getCurrentRequest()->getSession()->get('idCompagnie');
+        $idCompagnie=$this->get("request_stack")->getCurrentRequest()->getSession()->get('idCompagnie');
         $compagnie=$repositCompagnie->find($idCompagnie);
 
         $trajet=new Trajet();
@@ -136,7 +136,7 @@ class TrajetController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $repositTrajet=$em->getRepository('MainBundle:Trajet');
-        $idCompagnie=$this->requestStack->getCurrentRequest()->getSession()->get('idCompagnie');
+        $idCompagnie=$this->get("request_stack")->getCurrentRequest()->getSession()->get('idCompagnie');
 
         $listeTrajets=$repositTrajet->findBy(array('compagnie'=>$idCompagnie));
 

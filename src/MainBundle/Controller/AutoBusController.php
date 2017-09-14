@@ -53,7 +53,7 @@ class AutoBusController extends Controller
     public function modifierAction($idAutoBus)
     {
         $em=$this->getDoctrine()->getManager();
-        $idCompagnie=$this->requestStack->getCurrentRequest()->getSession()->get('idCompagnie');
+        $idCompagnie=$this->get("request_stack")->getCurrentRequest()->getSession()->get('idCompagnie');
 
         $repositAutoBus=$em->getRepository("MainBundle:AutoBus");
 
@@ -88,7 +88,7 @@ class AutoBusController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
 
-        $idCompagnie=$this->requestStack->getCurrentRequest()->getSession()->get('idCompagnie');
+        $idCompagnie=$this->get("request_stack")->getCurrentRequest()->getSession()->get('idCompagnie');
 
         $repositAutoBus=$em->getRepository("MainBundle:AutoBus");
 

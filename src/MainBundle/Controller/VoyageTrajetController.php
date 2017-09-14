@@ -16,7 +16,7 @@ class VoyageTrajetController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $repositVoyage=$em->getRepository("MainBundle:Voyage");
-        $idVoyage=$this->requestStack->getCurrentRequest()->getSession()->get('idVoyage');
+        $idVoyage=$this->get("request_stack")->getCurrentRequest()->getSession()->get('idVoyage');
 
         $voyage=$repositVoyage->find($idVoyage);
 
@@ -54,7 +54,7 @@ class VoyageTrajetController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
 
-        $idVoyage=$this->requestStack->getCurrentRequest()->getSession()->get('idVoyage');
+        $idVoyage=$this->get("request_stack")->getCurrentRequest()->getSession()->get('idVoyage');
 
         $repositVoyageTrajet=$em->getRepository("MainBundle:VoyageTrajet");
 
@@ -95,7 +95,7 @@ class VoyageTrajetController extends Controller
     public function supprimerAction($idVoyageTrajet)
     {
         $em=$this->getDoctrine()->getManager();
-        $idVoyage=$this->requestStack->getCurrentRequest()->getSession()->get('idVoyage');
+        $idVoyage=$this->get("request_stack")->getCurrentRequest()->getSession()->get('idVoyage');
 
         $repositVoyageTrajet=$em->getRepository("MainBundle:VoyageTrajet");
 

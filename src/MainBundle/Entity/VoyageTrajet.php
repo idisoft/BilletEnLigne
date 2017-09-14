@@ -26,7 +26,7 @@ class VoyageTrajet
      * @var int
      *
      * @ORM\Column(name="nbrePlaceInit", type="integer")
-     * @Assert\Range(min="1", max="100", invalidMessage="Veuillez saisir un nombre de place raisonnable svp !")
+     * @Assert\Range(min="1", max="50", maxMessage="Veuillez saisir un nombre de place raisonnable svp !")
      */
     private $nbrePlaceInit;
 

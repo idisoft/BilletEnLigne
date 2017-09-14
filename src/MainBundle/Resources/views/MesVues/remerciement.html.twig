@@ -29,7 +29,7 @@
         Destination: {{ ticket.voyageTrajet.trajet.destination.nomGare }}<br/>
         Date: {{ ticket.voyageTrajet.voyage.dateVoyage | date('d-M-y')}}<br/>
         Nom & Prénom: {{ ticket.nomClient }} {{ ticket.prenomClient }}<br/>
-        Téléphone: {{ ticket.telClient }}<br/>
+        Téléphone: {{ ticket.telClient | phone_number_format(2)}}<br/>
 
         <p style="color: red">VEUILLEZ VOUS PRESNETER AU GUICHET AVEC LE CODE POUOR RETIRER VOTRE TICKET PAPIER.</p>
     </div>

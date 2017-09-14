@@ -26,7 +26,7 @@
                 <td>{{ticket.voyageTrajet.trajet.destination.nomGare}}</td>
                 <td>{{ticket.prixTicket}}</td>
 
-                {#<td>
+                <td>
                    <div class="btn-group">
                        <button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown">
                            Actions <span class="caret"></span>
@@ -34,19 +34,19 @@
                        <ul class="dropdown-menu" role="menu">
 
                                <li>
-                                   <a href="{{ path('parcours_modifier',{'idParcours': parcours.id}) }}"> Modifier </a>
+                                   <a href="{{ path('ticket_modifier',{'idTicket': ticket.id}) }}"> Modifier </a>
                                </li>
-                               <li>
-                                   <a href="#" data-toggle="modal" data-target="#parc{{parcours.id}}" style="color:#ff0000"> Supprimer </a>
-                               </li>
+                               {#<li>
+                                   <a href="#" data-toggle="modal" data-target="#ticket{{ticket.id}}" style="color:#ff0000"> Supprimer </a>
+                               </li>#}
 
                        </ul>
                    </div>
 
                 </td>
 
-                    <!-- Modal-->
-                  <div class="modal fade" id="parc{{parcours.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                 {# <!-- Modal-->
+                  <div class="modal fade" id="ticket{{ticket.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-sm">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -54,16 +54,16 @@
                           <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
                         </div>
                         <div class="modal-body">
-                          Voulez vous reellement supprimer ce parcours??
+                          Voulez vous reellement supprimer ce ticket??
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-default" data-dismiss="modal">Non</button>
-                          <a href="{{ path('parcours_supprimer',{'idParcours': parcours.id}) }}"><button type="button" class="btn btn-primary">Oui</button></a>
+                          <a href="{{ path('ticket_supprimer',{'idTicket': ticket.id}) }}"><button type="button" class="btn btn-primary">Oui</button></a>
                         </div>
                       </div>
                     </div>
-                  </div>
-#}
+                  </div>#}
+
             </tr>
         {%endfor%}
     </tbody>

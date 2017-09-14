@@ -9,7 +9,7 @@
         <title>{% block title %}MonTicket{% endblock %}</title>
 
         {#filter='cssrewrite, scssphp'#}
-        {% stylesheets
+        {% stylesheets filter='scssphp'
             'css/mytheme.css'
             'css/datePicker.css'
             'css/responsive.css'
@@ -20,7 +20,7 @@
             'css/jquery-ui-1.10.4.custom.min.css'
             %}
 
-            <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen"/>
+            <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
 
             {#
             <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">

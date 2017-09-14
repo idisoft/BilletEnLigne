@@ -4,9 +4,52 @@
 
 {% block body %}
 
-    {% block colonne2 %}
-        <br><br><br><br>
-            
+    {% block content %}
+
+        <section id="top_bg"></section>
+
+        <section id="body_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-4">
+                        <div class="body_img">
+                            <img src="{{ asset('template_img/big.logo.png') }}" alt="" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form_box">
+                            <h2>Connectez-vous</h2>
+                        </div>
+
+                        {{ include('@FOSUser/Security/login_content.html.twig') }}
+
+                        {#<form role="form">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                <input type="text" class="form-control newpsac" placeholder="Username" required autofocus />
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                <input type="password" class="form-control newpsac" placeholder="Password" required />
+                            </div>
+                            <p>
+                                <a class="pull-left" href="">
+                                    <input type="checkbox" class="check" />
+                                    Remember me?
+                                </a></p>
+
+                            <a class="pull-right" href="">Lost your password?</a></p>
+                            <br />
+                            <button class="btn-logine">Login</button>
+                            <a class="pull-right" href="">Need New Account?</a></p>
+
+                        </form>#}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {#<br/><br/><br/><br/><br/><br/>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4  col-lg-offset-4 col-md-offset-4 col-sm-offset-4 col-xs-offset-4">
 
             <div class="wellguide">
@@ -15,7 +58,7 @@
                     <p>
                         <a href="{{ path('home_page') }}" class="navbar-brand">
                             <h3>MYTRAVEL</h3>
-                            {#<img src="{{ asset('images/logoRed.png') }}"  style="width: 100px" alt="logo">#}
+                            #}{#<img src="{{ asset('images/logoRed.png') }}"  style="width: 100px" alt="logo">#}{#
                         </a><br>
 
                     </p>
@@ -26,7 +69,19 @@
                 </div>
 
             </div>
-        </div>
+        </div>#}
 
     {% endblock%}
+
 {% endblock%}
+
+{% block copy_right %}
+    <section id="footer_bg">
+        <div class="container">
+            <div class="row">
+                <p style="text-align: center; color: #FFFFFF">MonTicket Copyright &copy; 2017 <br />
+                    A FITINISOFT Product</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

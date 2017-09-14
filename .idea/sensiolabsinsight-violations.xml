@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysis>
+  <link href="https://insight.sensiolabs.com/api/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15" rel="self" type="application/vnd.com.sensiolabs.insight+xml"/>
+  <link href="https://insight.sensiolabs.com/api/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15/status" rel="status" type="application/vnd.com.sensiolabs.insight+xml"/>
+  <link href="https://insight.sensiolabs.com/api/projects/2e71d856-111d-4b44-b553-9ed0595dcdea" rel="project" type="application/vnd.com.sensiolabs.insight+xml"/>
+  <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15" rel="self" type="text/html"/>
+  <status><![CDATA[finished]]></status>
+  <violations>
+    <violation severity="minor" category="bugrisk" ignored="false">
+      <line>0</line>
+      <title>Version of dependencies should be fixed</title>
+      <message><![CDATA[Package friendsofsymfony/user-bundle#dev-master is not fixed.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111412" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="bugrisk" ignored="false">
+      <line>0</line>
+      <resource><![CDATA[composer.json]]></resource>
+      <title>The composer.json file should not raise warnings</title>
+      <message><![CDATA[Defining autoload.psr-4 with an empty namespace prefix is a bad idea for performance]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111420" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="codestyle" ignored="false">
+      <line>18</line>
+      <resource><![CDATA[app/Resources/FOSUserBundle/views/Profile/show_content.html.twig]]></resource>
+      <title>Text files should end with a newline character</title>
+      <message><![CDATA[This file ends with no newline character. It won't render properly on a terminal, and it's considered a bad practice. Add a simple line feed as the last character to fix it.]]></message>
+      <context start-line="13" end-line="18"><![CDATA[    <div>
+        <strong>Dernière connection:</strong> {{ user.lastLogin|date('d/m/y') }}
+    </div>
+</div>
+
+    ]]></context>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111397" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="codestyle" ignored="false">
+      <line>16</line>
+      <resource><![CDATA[src/MainBundle/Resources/config/services.yml]]></resource>
+      <title>Text files should end with a newline character</title>
+      <message><![CDATA[This file ends with no newline character. It won't render properly on a terminal, and it's considered a bad practice. Add a simple line feed as the last character to fix it.]]></message>
+      <context start-line="11" end-line="16"><![CDATA[
+    main_form.voyage.type:
+        class: MainBundle\Form\VoyageType
+        arguments: ['@request_stack']
+        tags:
+            - { name: form.type }]]></context>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111392" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="codestyle" ignored="false">
+      <line>180</line>
+      <resource><![CDATA[src/MainBundle/Resources/views/MesVues/adminIndex.html.twig]]></resource>
+      <title>Text files should end with a newline character</title>
+      <message><![CDATA[This file ends with no newline character. It won't render properly on a terminal, and it's considered a bad practice. Add a simple line feed as the last character to fix it.]]></message>
+      <context start-line="175" end-line="180"><![CDATA[                </a>
+            </div>
+        </div>
+    </div> -->
+
+{%endblock%}]]></context>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111398" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="codestyle" ignored="false">
+      <line>59</line>
+      <resource><![CDATA[src/MainBundle/Resources/views/MesVues/listeAutoBus.html.twig]]></resource>
+      <title>Text files should end with a newline character</title>
+      <message><![CDATA[This file ends with no newline character. It won't render properly on a terminal, and it's considered a bad practice. Add a simple line feed as the last character to fix it.]]></message>
+      <context start-line="54" end-line="59"><![CDATA[            </tr>
+        {%endfor%}
+    </tbody>
+ </table>
+
+           ]]></context>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111422" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="codestyle" ignored="false">
+      <line>61</line>
+      <resource><![CDATA[src/MainBundle/Resources/views/MesVues/listeCompagnie.html.twig]]></resource>
+      <title>Text files should end with a newline character</title>
+      <message><![CDATA[This file ends with no newline character. It won't render properly on a terminal, and it's considered a bad practice. Add a simple line feed as the last character to fix it.]]></message>
+      <context start-line="56" end-line="61"><![CDATA[            </tr>
+        {%endfor%}
+    </tbody>
+ </table>
+
+           ]]></context>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111414" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="codestyle" ignored="false">
+      <line>72</line>
+      <resource><![CDATA[src/MainBundle/Resources/views/MesVues/listeTicket.html.twig]]></resource>
+      <title>Text files should end with a newline character</title>
+      <message><![CDATA[This file ends with no newline character. It won't render properly on a terminal, and it's considered a bad practice. Add a simple line feed as the last character to fix it.]]></message>
+      <context start-line="67" end-line="72"><![CDATA[            </tr>
+        {%endfor%}
+    </tbody>
+ </table>
+
+           ]]></context>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111435" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="codestyle" ignored="false">
+      <line>71</line>
+      <resource><![CDATA[src/MainBundle/Resources/views/MesVues/listeTrajet.html.twig]]></resource>
+      <title>Text files should end with a newline character</title>
+      <message><![CDATA[This file ends with no newline character. It won't render properly on a terminal, and it's considered a bad practice. Add a simple line feed as the last character to fix it.]]></message>
+      <context start-line="66" end-line="71"><![CDATA[            </tr>
+        {%endfor%}
+    </tbody>
+ </table>
+
+           ]]></context>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111424" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="codestyle" ignored="false">
+      <line>69</line>
+      <resource><![CDATA[src/MainBundle/Resources/views/MesVues/listeVoyage.html.twig]]></resource>
+      <title>Text files should end with a newline character</title>
+      <message><![CDATA[This file ends with no newline character. It won't render properly on a terminal, and it's considered a bad practice. Add a simple line feed as the last character to fix it.]]></message>
+      <context start-line="64" end-line="69"><![CDATA[            </tr>
+        {%endfor%}
+    </tbody>
+ </table>
+
+           ]]></context>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111429" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="codestyle" ignored="false">
+      <line>61</line>
+      <resource><![CDATA[src/MainBundle/Resources/views/MesVues/listeVoyageTrajet.html.twig]]></resource>
+      <title>Text files should end with a newline character</title>
+      <message><![CDATA[This file ends with no newline character. It won't render properly on a terminal, and it's considered a bad practice. Add a simple line feed as the last character to fix it.]]></message>
+      <context start-line="56" end-line="61"><![CDATA[            </tr>
+        {%endfor%}
+    </tbody>
+ </table>
+
+           ]]></context>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111405" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="minor" category="deadcode" ignored="true">
+      <line>11</line>
+      <resource><![CDATA[web/app.php]]></resource>
+      <title>Commented code should not be committed</title>
+      <message><![CDATA[Commented out code reduces readability and lowers the code confidence for other developers. If it's common usage for debug, it should not be committed. Using a version control system, such code can be safely removed.]]></message>
+      <context start-line="6" end-line="16"><![CDATA[$loader = require __DIR__.'/../app/autoload.php';
+include_once __DIR__.'/../var/bootstrap.php.cache';
+
+$kernel = new AppKernel('prod', false);
+$kernel->loadClassCache();
+//$kernel = new AppCache($kernel);
+
+// When using the HttpCache, you need to call the method in your front controller instead of relying on the configuration parameter
+//Request::enableHttpMethodParameterOverride();
+$request = Request::createFromGlobals();
+$response = $kernel->handle($request);]]></context>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=ignored#548111425" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="minor" category="deadcode" ignored="false">
+      <line>14</line>
+      <resource><![CDATA[web/app.php]]></resource>
+      <title>Commented code should not be committed</title>
+      <message><![CDATA[Commented out code reduces readability and lowers the code confidence for other developers. If it's common usage for debug, it should not be committed. Using a version control system, such code can be safely removed.]]></message>
+      <context start-line="9" end-line="19"><![CDATA[$kernel = new AppKernel('prod', false);
+$kernel->loadClassCache();
+//$kernel = new AppCache($kernel);
+
+// When using the HttpCache, you need to call the method in your front controller instead of relying on the configuration parameter
+//Request::enableHttpMethodParameterOverride();
+$request = Request::createFromGlobals();
+$response = $kernel->handle($request);
+$response->send();
+$kernel->terminate($request, $response);
+]]></context>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111430" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="minor" category="codestyle" ignored="false">
+      <line>0</line>
+      <resource><![CDATA[src/MainBundle/Form]]></resource>
+      <title>Form types should be in Form/Type folders</title>
+      <message><![CDATA[A form type has been found outside Form/Type folder]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111423" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="minor" category="codestyle" ignored="false">
+      <line>0</line>
+      <resource><![CDATA[src/MainBundle/Form]]></resource>
+      <title>Form types should be in Form/Type folders</title>
+      <message><![CDATA[A form type has been found outside Form/Type folder]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111402" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="minor" category="codestyle" ignored="false">
+      <line>0</line>
+      <resource><![CDATA[src/MainBundle/Form]]></resource>
+      <title>Form types should be in Form/Type folders</title>
+      <message><![CDATA[A form type has been found outside Form/Type folder]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111404" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="minor" category="codestyle" ignored="false">
+      <line>0</line>
+      <resource><![CDATA[src/MainBundle/Form]]></resource>
+      <title>Form types should be in Form/Type folders</title>
+      <message><![CDATA[A form type has been found outside Form/Type folder]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111427" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="minor" category="codestyle" ignored="false">
+      <line>0</line>
+      <resource><![CDATA[src/MainBundle/Form]]></resource>
+      <title>Form types should be in Form/Type folders</title>
+      <message><![CDATA[A form type has been found outside Form/Type folder]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111436" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="minor" category="codestyle" ignored="false">
+      <line>0</line>
+      <resource><![CDATA[src/MainBundle/Form]]></resource>
+      <title>Form types should be in Form/Type folders</title>
+      <message><![CDATA[A form type has been found outside Form/Type folder]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111444" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="minor" category="codestyle" ignored="false">
+      <line>0</line>
+      <resource><![CDATA[src/MainBundle/Form]]></resource>
+      <title>Form types should be in Form/Type folders</title>
+      <message><![CDATA[A form type has been found outside Form/Type folder]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111401" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="minor" category="codestyle" ignored="false">
+      <line>0</line>
+      <resource><![CDATA[src/UserBundle/Form]]></resource>
+      <title>Form types should be in Form/Type folders</title>
+      <message><![CDATA[A form type has been found outside Form/Type folder]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111439" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "voyageTrajet_supprimer" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111416" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "admin_tickets" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111415" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "voyage_modifier" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111413" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "voyage_nouveau" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111441" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "admin_compagnie" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111409" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "voyage_details" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111408" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "home_page" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111407" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "customer_homepage" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111406" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "voyageTrajet_modifier" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111419" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "compagnie_details" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111437" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "trajet_modifier" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111434" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "autoBus_nouveau" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111433" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "compagnie_supprimer" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111432" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "autoBus_modifier" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111431" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "voyageTrajet_nouveau" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111428" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "ticket_nouveau" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111426" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "admin_trajets" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111445" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "trajet_nouveau" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111438" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "voyage_supprimer" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111421" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "compagnie_liste" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111417" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "ticket_annulation" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111442" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "autoBus_supprimer" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111443" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "admin_home_page" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111396" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "compagnie_nouveau" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111394" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "compagnie_modifier" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111393" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "admin_voyage" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111403" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "trajet_supprimer" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111400" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <title>A route should always have a valid HTTP method</title>
+      <message><![CDATA[The route "ticket_validation" should have a routing method (GET/POST/PUT). It is mandatory.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111399" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="architecture" ignored="false">
+      <line>0</line>
+      <resource><![CDATA[]]></resource>
+      <title>Deprecated class found in service definition</title>
+      <message><![CDATA[The event_dispatcher service uses the Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher class, which has been deprecated in Symfony 3.3. Use the Symfony\Component\EventDispatcher\EventDispatcher class instead.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111440" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="performance" ignored="false">
+      <line>0</line>
+      <resource><![CDATA[app/.htaccess]]></resource>
+      <title>.htaccess should be avoided</title>
+      <message><![CDATA[A .htaccess file has been spotted. You should consider moving it to the server configuration to improve global performances.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111418" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="performance" ignored="false">
+      <line>0</line>
+      <resource><![CDATA[src/.htaccess]]></resource>
+      <title>.htaccess should be avoided</title>
+      <message><![CDATA[A .htaccess file has been spotted. You should consider moving it to the server configuration to improve global performances.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111410" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="performance" ignored="false">
+      <line>0</line>
+      <resource><![CDATA[web/.htaccess]]></resource>
+      <title>.htaccess should be avoided</title>
+      <message><![CDATA[A .htaccess file has been spotted. You should consider moving it to the server configuration to improve global performances.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111395" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="security" ignored="false">
+      <line>0</line>
+      <resource><![CDATA[web/favicon.ico]]></resource>
+      <title>Default favicon should be changed</title>
+      <message><![CDATA[Default default HiDPI Symfony favicon found.
+             This reveals the backend engine of the application and makes it more vulnerable to attackers. Consider using a custom favicon instead - plus, your users will memorize your application more easily.]]></message>
+      <context/>
+      <link href="https://insight.sensiolabs.com/projects/2e71d856-111d-4b44-b553-9ed0595dcdea/analyses/15?status=existing#548111411" rel="self" type="text/html"/>
+    </violation>
+  </violations>
+  <grades>
+    <entry><![CDATA[none]]></entry>
+    <entry><![CDATA[bronze]]></entry>
+    <entry><![CDATA[silver]]></entry>
+    <entry><![CDATA[gold]]></entry>
+    <entry><![CDATA[platinum]]></entry>
+  </grades>
+  <failed>false</failed>
+  <grade><![CDATA[silver]]></grade>
+  <next-grade><![CDATA[gold]]></next-grade>
+  <begin-at><![CDATA[2017-09-05T01:51:50+0200]]></begin-at>
+  <end-at><![CDATA[2017-09-05T01:52:29+0200]]></end-at>
+  <duration>20</duration>
+  <number>15</number>
+  <altered>false</altered>
+  <remediation-cost>54.75</remediation-cost>
+  <nb-violations>53</nb-violations>
+  <reference><![CDATA[1bce1008fe37b100342658444d5524400645041f]]></reference>
+  <configuration>
+    <ignored-branches>
+      <branch><![CDATA[gh-pages]]></branch>
+    </ignored-branches>
+    <pre-composer-script/>
+    <post-composer-script/>
+    <working-directory/>
+    <php-version/>
+    <php-ini/>
+    <commit-failure-conditions>
+      <branch><![CDATA[project.severity.critical > 0]]></branch>
+      <branch><![CDATA[project.severity.major > 0]]></branch>
+    </commit-failure-conditions>
+    <global-excluded-dirs>
+      <dir><![CDATA[vendor]]></dir>
+      <dir><![CDATA[vendors]]></dir>
+      <dir><![CDATA[test]]></dir>
+      <dir><![CDATA[tests]]></dir>
+      <dir><![CDATA[Tests]]></dir>
+      <dir><![CDATA[spec]]></dir>
+      <dir><![CDATA[features]]></dir>
+      <dir><![CDATA[Fixtures]]></dir>
+      <dir><![CDATA[DataFixtures]]></dir>
+      <dir><![CDATA[var]]></dir>
+    </global-excluded-dirs>
+    <excluded-patterns>
+      <pattern><![CDATA[app/check.php]]></pattern>
+      <pattern><![CDATA[app/SymfonyRequirements.php]]></pattern>
+      <pattern><![CDATA[public/index.php]]></pattern>
+      <pattern><![CDATA[web/config.php]]></pattern>
+      <pattern><![CDATA[web/app_*.php]]></pattern>
+    </excluded-patterns>
+    <patterns>
+      <file>
+        <pattern><![CDATA[*.php]]></pattern>
+        <pattern><![CDATA[*.twig]]></pattern>
+        <pattern><![CDATA[*.xml]]></pattern>
+        <pattern><![CDATA[*.yml]]></pattern>
+        <pattern><![CDATA[*.yaml]]></pattern>
+        <pattern><![CDATA[*.ini]]></pattern>
+        <pattern><![CDATA[*.dist]]></pattern>
+        <pattern><![CDATA[*.sql]]></pattern>
+        <pattern><![CDATA[*.md]]></pattern>
+        <pattern><![CDATA[*.rst]]></pattern>
+        <pattern><![CDATA[composer.*]]></pattern>
+        <pattern><![CDATA[.gitignore]]></pattern>
+        <pattern><![CDATA[LICENSE]]></pattern>
+        <pattern><![CDATA[README]]></pattern>
+        <pattern><![CDATA[Makefile]]></pattern>
+        <pattern><![CDATA[.htaccess]]></pattern>
+      </file>
+      <php>
+        <pattern><![CDATA[*.php]]></pattern>
+      </php>
+      <twig>
+        <pattern><![CDATA[*.twig]]></pattern>
+      </twig>
+    </patterns>
+    <rules>
+      <rule name="task_todo_comment" enabled="false"/>
+    </rules>
+    <parameters>
+      <parameter name="project_type">12</parameter>
+    </parameters>
+    <env/>
+    <notifications/>
+  </configuration>
+  <previous-analyses-references>
+    <analysis-reference number="15">1bce1008fe37b100342658444d5524400645041f</analysis-reference>
+    <analysis-reference number="14">0d71a2d9e4dc7eb3ba6d5564431b6752ddf1b25b</analysis-reference>
+    <analysis-reference number="13">5433c9199c07d1e3926d4187ca39df079b81e713</analysis-reference>
+    <analysis-reference number="12">5433c9199c07d1e3926d4187ca39df079b81e713</analysis-reference>
+    <analysis-reference number="11">38b2008703d14dbc2abc09ab374d98de2afb8818</analysis-reference>
+    <analysis-reference number="10">c7b299d464bed8c1f4a30ed42ad6c542316e277e</analysis-reference>
+    <analysis-reference number="9">ae0340a534e966f1b30f0a6ba5a0c191e2eeee91</analysis-reference>
+    <analysis-reference number="8">75dc99351ba680c486861bc3ef41bd4bc73b29c5</analysis-reference>
+    <analysis-reference number="7">ffa1853c7ad35af3da0e61fd828f609706d2b83c</analysis-reference>
+    <analysis-reference number="6">ffa1853c7ad35af3da0e61fd828f609706d2b83c</analysis-reference>
+    <analysis-reference number="5">ffa1853c7ad35af3da0e61fd828f609706d2b83c</analysis-reference>
+    <analysis-reference number="4">27f9499216d0983b8644596de64be9d702818ccf</analysis-reference>
+    <analysis-reference number="3">27f9499216d0983b8644596de64be9d702818ccf</analysis-reference>
+    <analysis-reference number="1">9a0ff29cde8fc350413e411ef8964d61e493d85d</analysis-reference>
+  </previous-analyses-references>
+  <nb-violations-new>0</nb-violations-new>
+  <nb-violations-existing>53</nb-violations-existing>
+  <nb-violations-fixed>2</nb-violations-fixed>
+  <nb-violations-ignored>1</nb-violations-ignored>
+</analysis>

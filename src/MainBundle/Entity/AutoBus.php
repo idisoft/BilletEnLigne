@@ -28,6 +28,7 @@ class AutoBus
      *
      * @ORM\Column(name="Code", type="string", length=25, unique=true)
      * @Assert\NotBlank()
+     * @Assert\Length(max="15", maxMessage="Nom de code trop long !!")
      */
     private $code;
 
